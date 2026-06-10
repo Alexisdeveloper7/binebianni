@@ -355,7 +355,7 @@ export default function Home() {
 
       <section
         id="servicios"
-        className="scroll-mt-20 px-4 py-12 md:scroll-mt-24 md:px-8 md:py-20"
+        className="scroll-mt-20 px-4 py-7 md:scroll-mt-24 md:px-8 md:py-20"
       >
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-black uppercase tracking-[0.22em] text-[#30435D]">
@@ -366,22 +366,30 @@ export default function Home() {
             Soluciones integrales de gestión social
           </h2>
 
-          <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {servicios.map((servicio) => (
-              <article
-                key={servicio.titulo}
-                className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl md:p-6"
-              >
-                <h3 className="text-lg font-black text-[#30435D]">
-                  {servicio.titulo}
-                </h3>
+          <div className="mt-5 grid gap-2 md:mt-7 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+  {servicios.map((servicio, index) => (
+    <article
+      key={servicio.titulo}
+      className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm md:rounded-[1.5rem] md:p-6 md:transition md:hover:-translate-y-1 md:hover:shadow-xl"
+    >
+      <div className="flex items-start gap-2.5">
+        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[#86CDFC]/30 text-[11px] font-black text-[#30435D] md:h-10 md:w-10 md:rounded-2xl md:text-sm">
+          {index + 1}
+        </div>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600 md:text-base md:leading-7">
-                  {servicio.texto}
-                </p>
-              </article>
-            ))}
-          </div>
+        <div>
+          <h3 className="text-[13px] font-black leading-snug text-[#30435D] md:text-lg md:leading-tight">
+            {servicio.titulo}
+          </h3>
+
+          <p className="mt-1 text-[11px] leading-4 text-slate-600 md:mt-3 md:text-base md:leading-7">
+            {servicio.texto}
+          </p>
+        </div>
+      </div>
+    </article>
+  ))}
+</div>
         </div>
       </section>
 
