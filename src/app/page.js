@@ -370,7 +370,7 @@ export default function Home() {
   {servicios.map((servicio, index) => (
     <article
       key={servicio.titulo}
-      className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm md:rounded-[1.5rem] md:p-6 md:transition md:hover:-translate-y-1 md:hover:shadow-xl"
+      className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm md:rounded-[1.5rem] md:p-6 md:transition md:hover:-translate-y-1 md:hover:shadow-xl lg:last:col-start-2"
     >
       <div className="flex items-start gap-2.5">
         <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[#86CDFC]/30 text-[11px] font-black text-[#30435D] md:h-10 md:w-10 md:rounded-2xl md:text-sm">
