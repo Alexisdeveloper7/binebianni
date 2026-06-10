@@ -194,7 +194,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-[1.75rem] border border-white bg-white/80 p-4 shadow-xl shadow-slate-200 md:p-6">
+          <div className="rounded-[1.75rem] border border-white bg-white/80 p-4 shadow-lg shadow-slate-200 md:p-6">
             <div className="rounded-[1.35rem] bg-[#30435D] p-6 text-white md:p-8">
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#86CDFC]">
                 Consultoría especializada
@@ -318,7 +318,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-slate-50 px-4 py-12 md:px-8 md:py-20">
+      <section className="bg-slate-50 px-4 py-7 md:px-8 md:py-20">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-black uppercase tracking-[0.22em] text-[#30435D]">
             Nuestros valores
@@ -328,26 +328,28 @@ export default function Home() {
             Principios que guían nuestro trabajo
           </h2>
 
-          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {valores.map((valor) => (
-              <article
-                key={valor.titulo}
-                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:rounded-3xl"
-              >
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#86CDFC]/35 font-black text-[#30435D]">
-                  ✓
-                </div>
+          <div className="mt-4 grid gap-1.5 md:mt-7 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+  {valores.map((valor) => (
+    <article
+      key={valor.titulo}
+      className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-sm md:block md:rounded-3xl md:p-5"
+    >
+      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-[#86CDFC]/35 text-[10px] font-black text-[#30435D] md:mb-4 md:h-11 md:w-11 md:rounded-2xl md:text-base">
+        ✓
+      </div>
 
-                <h3 className="text-lg font-black text-[#30435D]">
-                  {valor.titulo}
-                </h3>
+      <div>
+        <h3 className="text-sm font-black leading-none text-[#30435D] md:text-lg md:leading-tight">
+          {valor.titulo}
+        </h3>
 
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  {valor.texto}
-                </p>
-              </article>
-            ))}
-          </div>
+        <p className="mt-1 text-[11px] leading-4 text-slate-600 md:mt-2 md:text-sm md:leading-6">
+          {valor.texto}
+        </p>
+      </div>
+    </article>
+  ))}
+</div>
         </div>
       </section>
 
