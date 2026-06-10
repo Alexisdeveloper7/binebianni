@@ -101,7 +101,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-slate-800">
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white backdrop-blu">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8 md:py-4">
           <a href="#inicio" className="flex min-w-0 items-center gap-3">
             <img
