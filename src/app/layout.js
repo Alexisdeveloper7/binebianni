@@ -29,13 +29,37 @@ export const metadata = {
   ],
   authors: [{ name: "Consultoría Social Bi Ne Bianni" }],
   creator: "Consultoría Social Bi Ne Bianni",
+
+  icons: {
+    icon: "/images/image.png",
+    shortcut: "/images/image.png",
+    apple: "/images/image.png",
+  },
+
   openGraph: {
-    title: "Consultoría Social Bi Ne Bianni",
+    title: "Consultoría Social Bi Ne Bianni | Gestión social y sostenibilidad",
     description:
       "Construimos confianza. Generamos sostenibilidad. Consultoría especializada en gestión social, sostenibilidad y desarrollo comunitario.",
+    url: "https://binebianni.vercel.app",
     type: "website",
     locale: "es_MX",
     siteName: "Consultoría Social Bi Ne Bianni",
+    images: [
+      {
+        url: "/images/image.png",
+        width: 1200,
+        height: 630,
+        alt: "Consultoría Social Bi Ne Bianni",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Consultoría Social Bi Ne Bianni | Gestión social y sostenibilidad",
+    description:
+      "Construimos confianza. Generamos sostenibilidad. Consultoría especializada en gestión social, sostenibilidad y desarrollo comunitario.",
+    images: ["/images/image.png"],
   },
 };
 
