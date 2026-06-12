@@ -92,120 +92,119 @@ export async function POST(request) {
     const asunto = "Nueva solicitud de contacto";
 
     const html = `
-      <div style="margin:0; padding:0; background:#f3f7fb; font-family:Arial, Helvetica, sans-serif; color:#1f2937;">
-        <div style="max-width:700px; margin:0 auto; padding:32px 16px;">
-          <div style="background:#ffffff; border-radius:24px; overflow:hidden; border:1px solid #e5e7eb; box-shadow:0 18px 45px rgba(15, 23, 42, 0.10);">
-            
-            <div style="background:#30435D; padding:32px 30px; color:#ffffff;">
-              <p style="margin:0 0 10px; color:#86CDFC; font-size:12px; font-weight:800; letter-spacing:2px; text-transform:uppercase;">
-                Formulario de contacto
-              </p>
+      <div style="margin:0; padding:0; background:#eaf6ff; font-family:Arial, Helvetica, sans-serif; color:#07182A;">
+        <div style="max-width:610px; margin:0 auto; padding:12px 8px;">
+          <div style="background:#ffffff; border-radius:16px; overflow:hidden; border:1px solid #9bdcf8; box-shadow:0 12px 28px rgba(14,165,233,0.15);">
 
-              <h1 style="margin:0; font-size:28px; line-height:1.2; font-weight:900;">
+            <div style="background:#f8fcff; padding:14px 16px 13px; color:#07182A; border-bottom:3px solid #38bdf8;">
+              <div style="display:inline-block; margin:0 0 6px; padding:3px 8px; border-radius:999px; background:#dff5ff; border:1px solid #38bdf8; color:#0F2A44; font-size:9px; font-weight:900; letter-spacing:1.3px; text-transform:uppercase;">
+                Formulario de contacto
+              </div>
+
+              <h1 style="margin:0; color:#07182A; font-size:21px; line-height:1.15; font-weight:900; letter-spacing:-0.35px;">
                 Nueva solicitud de contacto
               </h1>
 
-              <p style="margin:14px 0 0; color:#dbeafe; font-size:15px; line-height:1.7;">
+              <p style="margin:6px 0 0; color:#24344b; font-size:12.5px; line-height:1.4; font-weight:800;">
                 Se recibió una nueva solicitud desde la página web de Consultoría Social Bi Ne Bianni.
-                A continuación se muestran los datos proporcionados por la persona interesada.
               </p>
             </div>
 
-            <div style="padding:30px;">
-              <div style="margin-bottom:22px;">
-                <p style="margin:0; color:#64748b; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:1.5px;">
+            <div style="padding:14px 16px 15px; background:#ffffff;">
+              <div style="margin-bottom:8px; padding:7px 9px; background:#edf9ff; border:1px solid #9bdcf8; border-radius:11px;">
+                <p style="margin:0; color:#07182A; font-size:9.5px; font-weight:900; text-transform:uppercase; letter-spacing:1.2px;">
                   Información recibida
                 </p>
               </div>
 
               <table style="width:100%; border-collapse:collapse;">
                 <tr>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#64748b; font-size:14px; font-weight:700; width:38%;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:11.5px; font-weight:900; width:38%; vertical-align:top;">
                     Nombre
                   </td>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#111827; font-size:15px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:12.5px; font-weight:800; vertical-align:top;">
                     ${nombre}
                   </td>
                 </tr>
 
                 <tr>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#64748b; font-size:14px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:11.5px; font-weight:900; vertical-align:top;">
                     Empresa u organización
                   </td>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#111827; font-size:15px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:12.5px; font-weight:800; vertical-align:top;">
                     ${empresa}
                   </td>
                 </tr>
 
                 <tr>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#64748b; font-size:14px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:11.5px; font-weight:900; vertical-align:top;">
                     Cargo
                   </td>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#111827; font-size:15px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:12.5px; font-weight:800; vertical-align:top;">
                     ${cargo}
                   </td>
                 </tr>
 
                 <tr>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#64748b; font-size:14px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:11.5px; font-weight:900; vertical-align:top;">
                     Correo electrónico
                   </td>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#111827; font-size:15px; font-weight:700;">
-                    <a href="mailto:${correo}" style="color:#30435D; text-decoration:none; font-weight:800;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:12.5px; font-weight:800; vertical-align:top;">
+                    <a href="mailto:${correo}" style="color:#075985; text-decoration:none; font-weight:900;">
                       ${correo}
                     </a>
                   </td>
                 </tr>
 
                 <tr>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#64748b; font-size:14px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:11.5px; font-weight:900; vertical-align:top;">
                     Teléfono
                   </td>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#111827; font-size:15px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:12.5px; font-weight:800; vertical-align:top;">
                     ${telefono}
                   </td>
                 </tr>
 
                 <tr>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#64748b; font-size:14px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:11.5px; font-weight:900; vertical-align:top;">
                     Tipo de proyecto
                   </td>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#111827; font-size:15px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:12.5px; font-weight:800; vertical-align:top;">
                     ${tipoProyecto}
                   </td>
                 </tr>
 
                 <tr>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#64748b; font-size:14px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:11.5px; font-weight:900; vertical-align:top;">
                     Estado de la República
                   </td>
-                  <td style="padding:13px 0; border-bottom:1px solid #e5e7eb; color:#111827; font-size:15px; font-weight:700;">
+                  <td style="padding:5.5px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:12.5px; font-weight:800; vertical-align:top;">
                     ${estado}
                   </td>
                 </tr>
               </table>
 
-              <div style="margin-top:30px;">
-                <p style="margin:0 0 10px; color:#64748b; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:1.5px;">
-                  Mensaje del solicitante
+              <div style="margin-top:13px;">
+                <p style="margin:0 0 6px; color:#07182A; font-size:9.5px; font-weight:900; text-transform:uppercase; letter-spacing:1.2px;">
+                  Mensaje del contacto
                 </p>
 
-                <div style="background:#f8fafc; border:1px solid #e5e7eb; border-radius:18px; padding:18px 20px;">
-                  <p style="margin:0; color:#1f2937; font-size:15px; line-height:1.7; white-space:pre-line;">
+                <div style="background:#f8fcff; border:1px solid #9bdcf8; border-left:4px solid #0ea5e9; border-radius:12px; padding:10px 12px;">
+                  <p style="margin:0; color:#111827; font-size:12.5px; line-height:1.42; font-weight:700; white-space:pre-line;">
                     ${mensaje}
                   </p>
                 </div>
               </div>
 
-              <div style="margin-top:28px; background:#eef7ff; border:1px solid #cfeaff; border-radius:18px; padding:16px 18px;">
-                <p style="margin:0; color:#30435D; font-size:14px; line-height:1.6; font-weight:700;">
+              <div style="margin-top:12px; background:#e9fbff; border:1px solid #7dd3fc; border-radius:12px; padding:9px 11px;">
+                <p style="margin:0; color:#07182A; font-size:11.5px; line-height:1.4; font-weight:900;">
                   Puedes responder directamente a este correo para dar seguimiento a la solicitud.
                 </p>
               </div>
             </div>
 
-            <div style="background:#1f2d40; padding:18px 30px;">
-              <p style="margin:0; color:#cbd5e1; font-size:12px; line-height:1.6;">
+            <div style="background:#edf9ff; padding:10px 16px; border-top:1px solid #9bdcf8;">
+              <p style="margin:0; color:#24344b; font-size:10px; line-height:1.4; font-weight:700;">
                 Este mensaje fue enviado automáticamente desde el formulario de contacto de la página web de Consultoría Social Bi Ne Bianni.
               </p>
             </div>
@@ -230,7 +229,7 @@ Teléfono: ${telefono}
 Tipo de proyecto: ${tipoProyecto}
 Estado de la República: ${estado}
 
-Mensaje del solicitante:
+Mensaje del contacto:
 ${mensaje}
 
 Puedes responder directamente a este correo para dar seguimiento a la solicitud.
