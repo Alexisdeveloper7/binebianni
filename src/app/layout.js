@@ -1,4 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,6 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://binebianni.vercel.app"),
+
   title: "Consultoría Social Bi Ne Bianni | Gestión social y sostenibilidad",
   description:
     "Consultoría especializada en gestión social, sostenibilidad, desarrollo comunitario y relacionamiento territorial para proyectos en México.",
@@ -76,7 +80,9 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
     >
       <body className="min-h-screen bg-white text-[#1f2937] antialiased">
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

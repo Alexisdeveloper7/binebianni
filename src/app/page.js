@@ -1,5 +1,7 @@
 "use client";
 
+import Contacto from "@/components/Contacto";
+
 const indicadores = [
   {
     numero: "+15 años",
@@ -90,60 +92,24 @@ const servicios = [
 ];
 
 export default function Home() {
-  const irAContacto = () => {
-    document.getElementById("contacto")?.scrollIntoView({
+  const irASeccion = (id) => {
+    document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
 
-    window.history.replaceState(null, "", window.location.pathname);
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${window.location.search}`
+    );
   };
 
   return (
-    <main className="min-h-screen bg-white text-slate-800">
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white backdrop-blu">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8 md:py-4">
-          <a href="#inicio" className="flex min-w-0 items-center gap-3">
-            <img
-              src="/images/logo.png"
-              alt="Bi Ne Bianni"
-              className="h-10 w-auto max-w-[150px] object-contain md:h-12 md:max-w-[190px]"
-            />
-
-            
-          </a>
-
-          <nav className="hidden items-center gap-7 text-sm font-semibold text-slate-600 md:flex">
-            <a href="#inicio" className="hover:text-[#30435D]">
-              Inicio
-            </a>
-            <a href="#nosotros" className="hover:text-[#30435D]">
-              Nosotros
-            </a>
-            <a href="#servicios" className="hover:text-[#30435D]">
-              Servicios
-            </a>
-            <a href="#experiencia" className="hover:text-[#30435D]">
-              Experiencia
-            </a>
-            <a href="#contacto" className="hover:text-[#30435D]">
-              Contacto
-            </a>
-          </nav>
-
-          <button
-            type="button"
-            onClick={irAContacto}
-            className="shrink-0 rounded-full bg-[#30435D] px-4 py-2.5 text-[11px] font-bold uppercase tracking-wide text-white md:px-5 md:py-3"
-          >
-            Solicitar consulta
-          </button>
-        </div>
-      </header>
-
+    <main className="min-h-screen overflow-x-hidden bg-white text-slate-800">
       <section
         id="inicio"
-        className="scroll-mt-20 relative overflow-hidden bg-[#f7fbff] px-4 py-7 md:scroll-mt-24 md:px-8 md:py-24"
+        className="scroll-mt-20 relative overflow-hidden bg-[#f7fbff] px-4 pt-7 pb-8 md:scroll-mt-24 md:px-8 md:pt-20 md:pb-8 lg:pt-24 lg:pb-10"
       >
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(134,205,252,0.45)_0%,rgba(247,251,255,0.75)_28%,#ffffff_55%)]" />
 
@@ -177,24 +143,25 @@ export default function Home() {
             </div>
 
             <div className="mt-7 grid gap-3 sm:flex">
-              <a
-                href="#experiencia"
-                className="rounded-full bg-[#30435D] px-6 py-3.5 text-center text-xs font-bold uppercase tracking-wide text-white"
+              <button
+                type="button"
+                onClick={() => irASeccion("experiencia")}
+                className="cursor-pointer rounded-full bg-[#30435D] px-6 py-3.5 text-center text-xs font-bold uppercase tracking-wide text-white shadow-md shadow-slate-900/10 outline-none transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#26364c] hover:shadow-lg hover:shadow-slate-900/20 focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 active:translate-y-0 active:scale-95"
               >
                 Conoce nuestra experiencia
-              </a>
+              </button>
 
               <button
                 type="button"
-                onClick={irAContacto}
-                className="rounded-full border border-[#30435D] bg-white px-6 py-3.5 text-center text-xs font-bold uppercase tracking-wide text-[#30435D]"
+                onClick={() => irASeccion("contacto")}
+                className="cursor-pointer rounded-full border border-[#30435D] bg-white px-6 py-3.5 text-center text-xs font-bold uppercase tracking-wide text-[#30435D] outline-none transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#30435D] hover:text-white hover:shadow-lg hover:shadow-slate-900/15 focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 active:translate-y-0 active:scale-95"
               >
                 Agenda una consulta
               </button>
             </div>
           </div>
 
-          <div className="rounded-[1.75rem] border border-white bg-white/80 p-4 shadow-lg shadow-slate-200 md:p-6">
+          <div className="rounded-[1.75rem] border border-white bg-white/80 p-4 shadow-lg shadow-slate-200 transition-all duration-300 hover:-translate-y-1 md:p-6">
             <div className="rounded-[1.35rem] bg-[#30435D] p-6 text-white md:p-8">
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#86CDFC]">
                 Consultoría especializada
@@ -213,7 +180,7 @@ export default function Home() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-semibold"
+                    className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/15"
                   >
                     {item}
                   </div>
@@ -226,22 +193,43 @@ export default function Home() {
 
       <section
         id="experiencia"
-        className="scroll-mt-20 px-4 py-10 md:scroll-mt-24 md:px-8 md:py-16"
+        className="scroll-mt-20 px-4 pt-2 pb-10 md:scroll-mt-24 md:px-8 md:pt-4 md:pb-16 lg:pt-5 lg:pb-20"
       >
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
-          {indicadores.map((item) => (
-            <div
-              key={item.numero}
-              className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm md:rounded-3xl md:p-6"
-            >
-              <p className="text-2xl font-black text-[#30435D] md:text-3xl">
-                {item.numero}
-              </p>
-              <p className="mt-2 text-xs font-semibold leading-5 text-slate-600 md:text-sm">
-                {item.texto}
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-4 rounded-2xl border border-slate-200 bg-[#f7fbff] p-4 shadow-sm md:mb-6 md:rounded-[1.5rem] md:p-6">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#30435D] md:text-xs">
+              Experiencia
+            </p>
+
+            <div className="mt-2 grid gap-2 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+              <h2 className="text-2xl font-black leading-tight tracking-tight text-[#30435D] md:text-4xl">
+                Trayectoria comprobada en gestión social
+              </h2>
+
+              <p className="max-w-3xl text-xs font-semibold leading-5 text-slate-600 md:text-sm md:leading-6">
+                Acompañamos proyectos con una visión estratégica, territorial y
+                sostenible, fortaleciendo la relación entre organizaciones,
+                comunidades y actores clave.
               </p>
             </div>
-          ))}
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-5">
+            {indicadores.map((item) => (
+              <div
+                key={item.numero}
+                className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/60 hover:shadow-lg hover:shadow-slate-200 md:rounded-3xl md:p-6"
+              >
+                <p className="max-w-full whitespace-normal text-[clamp(1.15rem,4.4vw,1.5rem)] font-black leading-tight tracking-tight text-[#30435D] lg:text-3xl">
+                  {item.numero}
+                </p>
+
+                <p className="mt-2 max-w-full whitespace-normal text-xs font-semibold leading-5 text-slate-600 md:text-sm">
+                  {item.texto}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -292,7 +280,7 @@ export default function Home() {
 
       <section className="px-4 py-12 md:px-8 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2">
-          <div className="rounded-[1.5rem] bg-[#B5CDDF]/35 p-5 md:rounded-[2rem] md:p-8">
+          <div className="rounded-[1.5rem] bg-[#B5CDDF]/35 p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-200 md:rounded-[2rem] md:p-8">
             <p className="text-xs font-black uppercase tracking-[0.22em] text-[#30435D]">
               Nuestra visión
             </p>
@@ -304,7 +292,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="rounded-[1.5rem] bg-[#86CDFC]/25 p-5 md:rounded-[2rem] md:p-8">
+          <div className="rounded-[1.5rem] bg-[#86CDFC]/25 p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-200 md:rounded-[2rem] md:p-8">
             <p className="text-xs font-black uppercase tracking-[0.22em] text-[#30435D]">
               Nuestra misión
             </p>
@@ -329,27 +317,27 @@ export default function Home() {
           </h2>
 
           <div className="mt-4 grid gap-1.5 md:mt-7 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
-  {valores.map((valor) => (
-    <article
-      key={valor.titulo}
-      className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-sm md:block md:rounded-3xl md:p-5"
-    >
-      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-[#86CDFC]/35 text-[10px] font-black text-[#30435D] md:mb-4 md:h-11 md:w-11 md:rounded-2xl md:text-base">
-        ✓
-      </div>
+            {valores.map((valor) => (
+              <article
+                key={valor.titulo}
+                className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/60 hover:shadow-lg hover:shadow-slate-200 md:block md:rounded-3xl md:p-5"
+              >
+                <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-[#86CDFC]/35 text-[10px] font-black text-[#30435D] transition-all duration-300 group-hover:bg-[#86CDFC]/50 md:mb-4 md:h-11 md:w-11 md:rounded-2xl md:text-base">
+                  ✓
+                </div>
 
-      <div>
-        <h3 className="text-sm font-black leading-none text-[#30435D] md:text-lg md:leading-tight">
-          {valor.titulo}
-        </h3>
+                <div>
+                  <h3 className="text-sm font-black leading-none text-[#30435D] md:text-lg md:leading-tight">
+                    {valor.titulo}
+                  </h3>
 
-        <p className="mt-1 text-[11px] leading-4 text-slate-600 md:mt-2 md:text-sm md:leading-6">
-          {valor.texto}
-        </p>
-      </div>
-    </article>
-  ))}
-</div>
+                  <p className="mt-1 text-[11px] leading-4 text-slate-600 md:mt-2 md:text-sm md:leading-6">
+                    {valor.texto}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -367,29 +355,29 @@ export default function Home() {
           </h2>
 
           <div className="mt-5 grid gap-2 md:mt-7 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
-  {servicios.map((servicio, index) => (
-    <article
-      key={servicio.titulo}
-      className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm md:rounded-[1.5rem] md:p-6 md:transition md:hover:-translate-y-1 md:hover:shadow-xl lg:last:col-start-2"
-    >
-      <div className="flex items-start gap-2.5">
-        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[#86CDFC]/30 text-[11px] font-black text-[#30435D] md:h-10 md:w-10 md:rounded-2xl md:text-sm">
-          {index + 1}
-        </div>
+            {servicios.map((servicio, index) => (
+              <article
+                key={servicio.titulo}
+                className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/60 hover:shadow-xl hover:shadow-slate-200 md:rounded-[1.5rem] md:p-6 lg:last:col-start-2"
+              >
+                <div className="flex items-start gap-2.5">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[#86CDFC]/30 text-[11px] font-black text-[#30435D] transition-all duration-300 md:h-10 md:w-10 md:rounded-2xl md:text-sm">
+                    {index + 1}
+                  </div>
 
-        <div>
-          <h3 className="text-[13px] font-black leading-snug text-[#30435D] md:text-lg md:leading-tight">
-            {servicio.titulo}
-          </h3>
+                  <div>
+                    <h3 className="text-[13px] font-black leading-snug text-[#30435D] md:text-lg md:leading-tight">
+                      {servicio.titulo}
+                    </h3>
 
-          <p className="mt-1 text-[11px] leading-4 text-slate-600 md:mt-3 md:text-base md:leading-7">
-            {servicio.texto}
-          </p>
-        </div>
-      </div>
-    </article>
-  ))}
-</div>
+                    <p className="mt-1 text-[11px] leading-4 text-slate-600 md:mt-3 md:text-base md:leading-7">
+                      {servicio.texto}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -407,7 +395,7 @@ export default function Home() {
             {["Kino Energía", "Zuma Energía"].map((cliente) => (
               <div
                 key={cliente}
-                className="rounded-[1.5rem] border border-slate-200 bg-white p-6 text-xl font-black text-[#30435D] shadow-sm md:p-8 md:text-2xl"
+                className="rounded-[1.5rem] border border-slate-200 bg-white p-6 text-xl font-black text-[#30435D] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/60 hover:shadow-lg hover:shadow-slate-200 md:p-8 md:text-2xl"
               >
                 {cliente}
               </div>
@@ -420,84 +408,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="contacto"
-        className="scroll-mt-20 px-4 py-12 md:scroll-mt-24 md:px-8 md:py-20"
-      >
-        <div className="mx-auto grid max-w-7xl gap-7 rounded-[1.5rem] bg-[#30435D] p-5 text-white md:rounded-[2rem] md:p-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#86CDFC]">
-              Contacto
-            </p>
-
-            <h2 className="mt-3 text-3xl font-black md:text-5xl">
-              Hablemos de tu proyecto
-            </h2>
-
-            <p className="mt-4 leading-7 text-slate-100 md:text-lg md:leading-8">
-              Cuéntanos sobre tu organización, el tipo de proyecto y el
-              territorio donde buscas fortalecer tu estrategia social.
-            </p>
-          </div>
-
-          <form className="grid gap-3">
-            {[
-              "Nombre",
-              "Empresa",
-              "Cargo",
-              "Correo electrónico",
-              "Teléfono",
-              "Tipo de proyecto",
-              "Estado de la República",
-            ].map((campo) => (
-              <input
-                key={campo}
-                placeholder={campo}
-                className="rounded-2xl border border-white/20 bg-white px-4 py-3.5 text-sm font-semibold text-slate-900 outline-none"
-              />
-            ))}
-
-            <textarea
-              placeholder="Mensaje"
-              rows={4}
-              className="resize-none rounded-2xl border border-white/20 bg-white px-4 py-3.5 text-sm font-semibold text-slate-900 outline-none"
-            />
-
-            <button
-              type="button"
-              className="rounded-full bg-[#86CDFC] px-6 py-3.5 text-xs font-black uppercase tracking-wide text-[#30435D]"
-            >
-              Enviar solicitud
-            </button>
-          </form>
-        </div>
-      </section>
-
-      <footer className="bg-[#1f2d40] px-4 py-8 text-white md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-[1fr_auto]">
-          <div>
-            <p className="text-base font-black uppercase tracking-[0.16em]">
-              Consultoría Social Bi Ne Bianni
-            </p>
-            <p className="mt-3 max-w-md text-sm leading-6 text-slate-300">
-              Gestión social, sostenibilidad y desarrollo territorial.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-4 text-sm font-semibold text-slate-300">
-            <a href="#inicio">Inicio</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#experiencia">Experiencia</a>
-            <a href="#contacto">Contacto</a>
-          </div>
-
-          <div className="text-sm leading-7 text-slate-300 md:col-span-2">
-            <p>binebianni@gmail.com</p>
-            <p>971 123 4567</p>
-          </div>
-        </div>
-      </footer>
+      <Contacto />
     </main>
   );
 }
