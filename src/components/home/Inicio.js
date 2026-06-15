@@ -33,7 +33,7 @@ export default function Inicio() {
           src={imagenArriba}
           alt=""
           aria-hidden="true"
-          className="absolute left-1/2 top-0 w-[300px] -translate-x-1/2 select-none md:top-4 md:w-[400px] lg:left-1/2 lg:w-[520px] lg:-mt-3"
+          className="absolute left-1/2 top-0 w-[300px] -translate-x-1/2 select-none md:top-3 md:w-[400px] lg:left-1/2 lg:w-[520px] lg:-mt-1 mt-1"
         />
       </div>
 
