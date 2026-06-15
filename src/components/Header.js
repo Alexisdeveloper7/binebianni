@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Header() {
   const [botonPresionado, setBotonPresionado] = useState("");
+  const timeoutRef = useRef(null);
 
-  const irASeccion = (id) => {
-    setBotonPresionado(id);
+  const irASeccion = (id, botonId) => {
+    setBotonPresionado(botonId);
 
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
@@ -19,28 +20,32 @@ export default function Header() {
       `${window.location.pathname}${window.location.search}`
     );
 
-    setTimeout(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = setTimeout(() => {
       setBotonPresionado("");
     }, 450);
   };
 
   const links = [
     { nombre: "Inicio", id: "inicio" },
+    { nombre: "Experiencia", id: "experiencia" },
     { nombre: "Nosotros", id: "nosotros" },
     { nombre: "Servicios", id: "servicios" },
-    { nombre: "Experiencia", id: "experiencia" },
     { nombre: "Contacto", id: "contacto" },
   ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b-2 border-[#30435D]/45 bg-white shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
-      <div className="mx-auto flex min-h-[74px] max-w-7xl items-center justify-between gap-3 px-4 md:px-6 xl:px-8">
+      <div className="relative mx-auto flex min-h-[74px] max-w-7xl items-center justify-between gap-3 px-4 md:px-6 xl:px-8">
         <button
           type="button"
           aria-label="Ir al inicio"
-          onClick={() => irASeccion("inicio")}
+          onClick={() => irASeccion("inicio", "logo-inicio")}
           className={`group flex min-w-0 shrink-0 touch-manipulation cursor-pointer items-center rounded-2xl outline-none transition-[background-color,box-shadow,ring-color] duration-300 lg:hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 ${
-            botonPresionado === "inicio"
+            botonPresionado === "logo-inicio"
               ? "bg-[#eef8ff] ring-2 ring-[#86CDFC]/60 ring-offset-2 ring-offset-white shadow-md shadow-[#86CDFC]/20"
               : ""
           }`}
@@ -49,21 +54,22 @@ export default function Header() {
             src="/images/logo.png"
             alt="Bi Ne Bianni"
             className={`h-10 w-auto max-w-[145px] object-contain transition-opacity duration-300 group-hover:opacity-90 sm:h-11 sm:max-w-[175px] md:max-w-[125px] lg:max-w-[150px] xl:h-12 xl:max-w-[205px] ${
-              botonPresionado === "inicio" ? "opacity-90" : ""
+              botonPresionado === "logo-inicio" ? "opacity-90" : ""
             }`}
           />
         </button>
 
-        <nav className="hidden min-w-0 flex-1 items-center justify-center px-2 lg:flex">
-          <div className="flex max-w-full items-center gap-1 rounded-full border border-slate-200 bg-[#f6f9fc] p-1 shadow-inner shadow-white">
+        <nav className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center justify-center lg:flex">
+          <div className="pointer-events-auto flex max-w-full items-center gap-1 rounded-full border border-slate-200 bg-[#f6f9fc] p-1 shadow-inner shadow-white">
             {links.map((link) => {
-              const activo = botonPresionado === link.id;
+              const botonId = `nav-${link.id}`;
+              const activo = botonPresionado === botonId;
 
               return (
                 <button
                   key={link.id}
                   type="button"
-                  onClick={() => irASeccion(link.id)}
+                  onClick={() => irASeccion(link.id, botonId)}
                   className={`group/link shrink-0 touch-manipulation cursor-pointer whitespace-nowrap rounded-full border px-3 py-2 text-xs font-bold outline-none transition-[background-color,border-color,color,box-shadow] duration-300 focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 xl:px-5 xl:py-2.5 xl:text-sm ${
                     activo
                       ? "border-[#86CDFC]/60 bg-[#30435D] text-white shadow-md shadow-[#30435D]/20"
@@ -89,9 +95,9 @@ export default function Header() {
 
         <button
           type="button"
-          onClick={() => irASeccion("contacto")}
-          className={`group relative inline-flex shrink-0 touch-manipulation cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[#30435D]/15 bg-[#30435D] px-3.5 py-2.5 text-[10px] font-black uppercase tracking-[0.12em] text-white shadow-lg shadow-[#30435D]/20 outline-none transition-[background-color,box-shadow,ring-color] duration-300 lg:hover:-translate-y-0.5 hover:bg-[#26364c] hover:shadow-xl hover:shadow-[#30435D]/25 focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 sm:px-5 sm:py-3 sm:text-[11px] ${
-            botonPresionado === "contacto"
+          onClick={() => irASeccion("contacto", "cta-contacto")}
+          className={`group relative inline-flex shrink-0 touch-manipulation cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[#30435D]/15 bg-[#30435D] px-3.5 py-2.5 text-[10px] font-black uppercase tracking-[0.12em] text-white shadow-lg shadow-[#30435D]/20 outline-none transition-[background-color,box-shadow,ring-color] duration-300 hover:bg-[#26364c] hover:shadow-xl hover:shadow-[#30435D]/25 focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 sm:px-5 sm:py-3 sm:text-[11px] lg:hover:-translate-y-0.5 ${
+            botonPresionado === "cta-contacto"
               ? "bg-[#1f2d40] ring-2 ring-[#86CDFC]/70 ring-offset-2 ring-offset-white"
               : ""
           }`}
@@ -103,7 +109,7 @@ export default function Header() {
 
             <span
               className={`grid size-4 place-items-center rounded-full text-[9px] leading-none transition-colors duration-300 sm:size-5 sm:text-[10px] ${
-                botonPresionado === "contacto"
+                botonPresionado === "cta-contacto"
                   ? "bg-[#86CDFC] text-[#30435D]"
                   : "bg-white/15 text-white group-hover:bg-white/20"
               }`}

@@ -9,7 +9,8 @@ function bloquearScroll() {
 
   if (window.__modalScrollLockCount === 1) {
     window.__modalOriginalBodyOverflow = document.body.style.overflow;
-    window.__modalOriginalHtmlOverflow = document.documentElement.style.overflow;
+    window.__modalOriginalHtmlOverflow =
+      document.documentElement.style.overflow;
 
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
@@ -71,10 +72,23 @@ export default function ModalConfirmarEnvio({
     };
   }, [renderizar]);
 
+  const cancelar = () => {
+    if (cargando) return;
+    onCancelar?.();
+  };
+
+  const confirmar = () => {
+    if (cargando) return;
+    onConfirmar?.();
+  };
+
   if (!renderizar) return null;
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-confirmar-titulo"
       className={`fixed inset-0 z-[999] flex items-center justify-center px-4 backdrop-blur-sm transition-all duration-300 ease-out ${
         visible ? "bg-black/50 opacity-100" : "bg-black/0 opacity-0"
       }`}
@@ -83,14 +97,17 @@ export default function ModalConfirmarEnvio({
         className={`w-full max-w-md rounded-[2rem] bg-white p-6 text-center shadow-2xl transition-all duration-300 ease-out ${
           visible
             ? "translate-y-0 scale-100 opacity-100"
-            : "translate-y-6 scale-90 opacity-0"
+            : "translate-y-6 scale-95 opacity-0"
         }`}
       >
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#86CDFC]/25 text-3xl font-black text-[#30435D]">
           ?
         </div>
 
-        <h3 className="mt-5 text-2xl font-black text-[#30435D]">
+        <h3
+          id="modal-confirmar-titulo"
+          className="mt-5 text-2xl font-black text-[#30435D]"
+        >
           Confirmar envío
         </h3>
 
@@ -101,18 +118,18 @@ export default function ModalConfirmarEnvio({
         <div className="mt-6 grid grid-cols-2 gap-3">
           <button
             type="button"
-            onClick={onCancelar}
+            onClick={cancelar}
             disabled={cargando}
-            className="cursor-pointer rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-black uppercase tracking-wide text-slate-700 outline-none transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-100 focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 active:translate-y-0 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+            className="cursor-pointer rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-black uppercase tracking-wide text-slate-700 outline-none transition-all duration-300 hover:bg-slate-100 focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-white"
           >
             Cancelar
           </button>
 
           <button
             type="button"
-            onClick={onConfirmar}
+            onClick={confirmar}
             disabled={cargando}
-            className="cursor-pointer rounded-full bg-[#30435D] px-5 py-3 text-sm font-black uppercase tracking-wide text-white outline-none transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#26364c] hover:shadow-lg hover:shadow-slate-900/20 focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 active:translate-y-0 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:bg-[#30435D] disabled:hover:shadow-none"
+            className="cursor-pointer rounded-full bg-[#30435D] px-5 py-3 text-sm font-black uppercase tracking-wide text-white outline-none transition-all duration-300 hover:bg-[#26364c] hover:shadow-lg hover:shadow-slate-900/20 focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-[#30435D] disabled:hover:shadow-none"
           >
             {cargando ? "Enviando..." : "Confirmar"}
           </button>
