@@ -33,7 +33,7 @@ const valores = [
 
 export default function Valores() {
   return (
-    <section className="bg-gradient-to-b from-[#f7fbff] via-[#f3f8fd] to-[#f8fbff] px-4 py-7 md:px-8 md:py-10">
+    <section className="bg-gradient-to-b from-[#f7fbff] via-[#f3f8fd] to-[#f8fbff] px-4 m- md:px-8 md:py-10">
       <div className="mx-auto max-w-7xl">
         <p className="text-xs font-black uppercase tracking-[0.22em] text-[#30435D]">
           Nuestros valores
