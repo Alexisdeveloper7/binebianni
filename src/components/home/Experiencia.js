@@ -32,7 +32,7 @@ export default function Experiencia() {
   return (
     <section
       id="experiencia"
-      className="relative -mt-px -mb-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 pt-4 pb-6 md:scroll-mt-24 md:px-8 md:pt-5 md:pb-8 lg:pt-6 lg:pb-10"
+      className="relative -mt-px -mb-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 pt-4 pb-2 md:scroll-mt-24 md:px-8 md:pt-5 md:pb- lg:pt-6 lg:pb-10"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="mb-5 text-center md:mb-7">
@@ -54,11 +54,11 @@ export default function Experiencia() {
           </h2>
         </div>
 
-        <div className="mx-auto grid w-full grid-cols-1 gap-3 sm:max-w-[1000px] sm:grid-cols-2 sm:justify-center md:gap-4 lg:grid-cols-4">
+        <div className="mx-auto grid w-full grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4 lg:grid-cols-4">
           {indicadores.map((indicador, index) => (
             <article
               key={index}
-              className="group relative w-full overflow-hidden rounded-[1.2rem] border border-[#86CDFC]/35 bg-[#f7fcff] p-3 ring-1 ring-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#86CDFC]/65 hover:bg-white sm:max-w-[240px] sm:justify-self-center md:rounded-[1.35rem] md:p-4 lg:rounded-[1.45rem] lg:p-3.5"
+              className="group relative w-full overflow-hidden rounded-[1.2rem] border border-[#86CDFC]/35 bg-[#f7fcff] p-3 ring-1 ring-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#86CDFC]/65 hover:bg-white md:rounded-[1.35rem] md:p-4 lg:rounded-[1.45rem] lg:p-3.5"
             >
               <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#86CDFC]/18 blur-2xl transition-all duration-300 group-hover:bg-[#86CDFC]/25" />
               <div className="absolute -bottom-16 -left-16 h-32 w-32 rounded-full bg-[#30435D]/4 blur-3xl" />
@@ -93,7 +93,7 @@ export default function Experiencia() {
                     </h3>
                   )}
 
-                  <p className="mt-1 max-w-full break-words text-[11px] font-semibold leading-snug text-[#30435D]/75 sm:text-[11.4px] md:mt-2 md:max-w-[180px] md:text-[12.5px] md:leading-relaxed lg:mx-auto lg:mt-2 lg:max-w-[150px] lg:text-[11.5px]">
+                  <p className="mt-1 max-w-full break-words text-[11px] font-semibold leading-snug text-[#30435D]/75 sm:text-[11.4px] md:mt-2 md:max-w-none md:text-[12.5px] md:leading-relaxed lg:mx-auto lg:mt-2 lg:max-w-[150px] lg:text-[11.5px]">
                     {indicador.texto}
                   </p>
                 </div>

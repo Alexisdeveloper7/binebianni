@@ -65,10 +65,7 @@ export default function Nosotros() {
                 confianza que favorecen la sostenibilidad de largo plazo.
               </p>
 
-              <p className="mx-auto max-w-2xl rounded-2xl border border-[#86CDFC]/35 bg-[#e4f5ff]/70 px-4 py-2 font-black text-[#24344b]">
-                A lo largo de nuestra trayectoria hemos participado en más de 200
-                proyectos desarrollados en 10 estados de la República Mexicana.
-              </p>
+              
             </div>
           </div>
         </div>
