@@ -19,10 +19,10 @@ const estadoInicial = {
 };
 
 const inputClass =
-  "rounded-lg border border-cyan-300/35 bg-white/95 px-2.5 py-[4px] text-sm font-semibold text-slate-900 shadow-[0_5px_14px_rgba(8,47,73,0.14)] outline-none transition-all duration-300 placeholder:text-slate-400 hover:border-sky-300 hover:bg-white hover:shadow-[0_7px_20px_rgba(14,165,233,0.2)] focus:border-sky-300 focus:bg-white focus:ring-2 focus:ring-sky-300/60 md:rounded-xl md:px-3 md:py-[6px] md:text-sm max-[380px]:px-2 max-[380px]:py-[3px]";
+  "rounded-lg border border-cyan-300/35 bg-white/95 px-2 py-[3px] text-[12px] font-semibold text-slate-900 shadow-[0_4px_12px_rgba(8,47,73,0.13)] outline-none transition-all duration-300 placeholder:text-slate-400 hover:border-sky-300 hover:bg-white hover:shadow-[0_6px_16px_rgba(14,165,233,0.18)] focus:border-sky-300 focus:bg-white focus:ring-2 focus:ring-sky-300/55 md:rounded-xl md:px-3 md:py-[6px] md:text-sm max-[380px]:px-1.5 max-[380px]:py-[2.5px] max-[380px]:text-[11.5px]";
 
 const labelClass =
-  "pl-0.5 text-[8px] font-black uppercase tracking-[0.08em] text-cyan-100 drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)] md:text-[8.5px] md:tracking-[0.09em] max-[380px]:text-[7.5px]";
+  "pl-0.5 text-[7px] font-black uppercase tracking-[0.07em] text-cyan-100 drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)] md:text-[8.5px] md:tracking-[0.09em] max-[380px]:text-[6.8px]";
 
 function limpiarTelefono(telefono) {
   return String(telefono || "")
@@ -133,28 +133,28 @@ export default function Contacto() {
     <>
       <section
         id="contacto"
-        className="relative scroll-mt-20 overflow-hidden px-4 py-2 md:scroll-mt-24 md:px-8 md:py-5 max-[380px]:px-3 max-[380px]:py-2"
+        className="relative isolate -mt-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 pt- pb-2 sm:px-5 sm:pb-9 md:scroll-mt-24 md:px-8 md:pt-1 md:pb-7 max-[380px]:px-3 max-[380px]:pt-0"
       >
-        <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-40 -translate-y-1/2 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.22),transparent_65%)]" />
-
-        <div className="relative isolate mx-auto grid max-w-7xl gap-1.5 overflow-hidden rounded-[0.9rem] border border-cyan-300/20 bg-[radial-gradient(circle_at_18%_12%,rgba(125,211,252,0.35),transparent_30%),radial-gradient(circle_at_92%_10%,rgba(14,165,233,0.34),transparent_28%),linear-gradient(135deg,#07182A_0%,#0F2A44_38%,#1E4D6E_72%,#081827_100%)] p-1.5 text-white shadow-2xl shadow-sky-950/40 md:gap-2.5 md:rounded-[1.4rem] md:p-3 lg:grid-cols-[0.85fr_1.15fr] max-[380px]:gap-1.5 max-[380px]:p-1.5">
+        <div className="relative isolate mx-auto grid w-full max-w-[430px] gap-1 overflow-hidden rounded-[0.85rem] border border-white/15 bg-[#0F2A44] p-1.5 text-white shadow-none sm:max-w-5xl sm:grid-cols-[0.82fr_1.18fr] sm:gap-2 sm:p-2 md:gap-2.5 md:rounded-[1.4rem] md:p-3 lg:max-w-7xl lg:grid-cols-[0.85fr_1.15fr] max-[380px]:gap-1 max-[380px]:p-1.5">
           <img
             src={imagenFondoCard}
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 z-0 h-full w-full object-cover lg:w-[42.5%]"
+            className="pointer-events-none absolute inset-y-0 left-0 z-0 h-full w-full object-cover sm:w-[41%] lg:w-[42.5%]"
           />
 
-          <div className="relative z-10 flex flex-col items-start justify-start lg:min-h-full lg:items-center lg:justify-center lg:px-8 lg:text-center">
-            <p className="inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-2 py-0.5 text-[8px] font-black uppercase tracking-[0.16em] text-cyan-100 shadow-sm shadow-black/10 backdrop-blur-md md:text-[9px] md:tracking-[0.18em] max-[380px]:px-2 max-[380px]:text-[8px]">
+          <div className="absolute inset-0 z-0 bg-[#0F2A44]/55 sm:w-[41%] lg:w-[42.5%]" />
+
+          <div className="relative z-10 flex flex-col items-center justify-center px-2 py-1 text-center sm:min-h-full sm:px-4 md:px-6 lg:px-8">
+            <p className="inline-flex rounded-full border border-white/20 bg-[#0F2A44]/70 px-2 py-[2px] text-[7px] font-black uppercase tracking-[0.14em] text-white shadow-sm shadow-black/10 backdrop-blur-md md:text-[9px] md:tracking-[0.18em] max-[380px]:text-[6.8px]">
               Contacto
             </p>
 
-            <h2 className="mt-0.5 bg-gradient-to-r from-white via-cyan-100 to-sky-300 bg-clip-text text-base font-black leading-tight text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] md:mt-1 md:text-2xl max-[380px]:text-base">
+            <h2 className="mt-0.5 text-[15px] font-black leading-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] md:mt-1 md:text-2xl max-[380px]:text-sm">
               Hablemos de tu proyecto
             </h2>
 
-            <p className="mt-1 max-w-md text-xs leading-5 text-slate-100/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] md:mt-1 md:text-sm md:leading-5 max-[380px]:text-[11px] max-[380px]:leading-4">
+            <p className="mt-0.5 max-w-[290px] text-[10.5px] leading-4 text-slate-100/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] md:mt-1 md:max-w-md md:text-sm md:leading-5 max-[380px]:text-[10px] max-[380px]:leading-[15px]">
               Cuéntanos sobre tu organización, el tipo de proyecto y el
               territorio donde buscas fortalecer tu estrategia social.
             </p>
@@ -162,9 +162,9 @@ export default function Contacto() {
 
           <form
             onSubmit={abrirConfirmacion}
-            className="relative z-10 grid gap-[3px] rounded-[0.75rem] border border-transparent bg-transparent p-1.5 text-left shadow-none backdrop-blur-0 md:gap-1 md:rounded-[1rem] md:p-1.5 lg:border-cyan-200/15 lg:bg-white/[0.08] lg:shadow-inner lg:shadow-white/10 lg:backdrop-blur-md max-[380px]:gap-[3px] max-[380px]:p-1.5"
+            className="relative z-10 mx-auto grid w-full max-w-[430px] gap-[2px] rounded-[0.7rem] border border-transparent bg-transparent p-1 text-left shadow-none backdrop-blur-0 sm:max-w-none sm:gap-1 sm:p-1.5 md:rounded-[1rem] lg:border-white/10 lg:bg-[#0F2A44]/35 lg:shadow-inner lg:shadow-white/10 lg:backdrop-blur-md max-[380px]:gap-[2px] max-[380px]:p-1"
           >
-            <div className="grid gap-[2px]">
+            <div className="grid gap-[1px]">
               <label htmlFor="nombre" className={labelClass}>
                 Escribe tu nombre
               </label>
@@ -182,7 +182,7 @@ export default function Contacto() {
               />
             </div>
 
-            <div className="grid gap-[2px]">
+            <div className="grid gap-[1px]">
               <label htmlFor="empresa" className={labelClass}>
                 Escribe tu empresa
               </label>
@@ -200,7 +200,7 @@ export default function Contacto() {
               />
             </div>
 
-            <div className="grid gap-[2px]">
+            <div className="grid gap-[1px]">
               <label htmlFor="cargo" className={labelClass}>
                 Escribe tu cargo
               </label>
@@ -218,7 +218,7 @@ export default function Contacto() {
               />
             </div>
 
-            <div className="grid gap-[2px]">
+            <div className="grid gap-[1px]">
               <label htmlFor="correo" className={labelClass}>
                 Escribe tu correo
               </label>
@@ -239,13 +239,13 @@ export default function Contacto() {
               />
             </div>
 
-            <div className="grid gap-[2px]">
+            <div className="grid gap-[1px]">
               <label htmlFor="telefono" className={labelClass}>
                 Escribe tu teléfono
               </label>
 
-              <div className="flex overflow-hidden rounded-lg border border-cyan-300/35 bg-white/95 shadow-[0_5px_14px_rgba(8,47,73,0.14)] transition-all duration-300 hover:border-sky-300 hover:bg-white hover:shadow-[0_7px_20px_rgba(14,165,233,0.2)] focus-within:border-sky-300 focus-within:bg-white focus-within:ring-2 focus-within:ring-sky-300/60 md:rounded-xl">
-                <span className="flex items-center border-r border-cyan-300/25 bg-gradient-to-b from-cyan-100 to-sky-100 px-2.5 text-sm font-black text-[#0F2A44] md:px-3 md:text-sm max-[380px]:px-2">
+              <div className="flex overflow-hidden rounded-lg border border-cyan-300/35 bg-white/95 shadow-[0_4px_12px_rgba(8,47,73,0.13)] transition-all duration-300 hover:border-sky-300 hover:bg-white hover:shadow-[0_6px_16px_rgba(14,165,233,0.18)] focus-within:border-sky-300 focus-within:bg-white focus-within:ring-2 focus-within:ring-sky-300/55 md:rounded-xl">
+                <span className="flex items-center border-r border-cyan-300/25 bg-[#dff4ff] px-2 text-[12px] font-black text-[#0F2A44] md:px-3 md:text-sm max-[380px]:px-1.5 max-[380px]:text-[11.5px]">
                   +52
                 </span>
 
@@ -262,12 +262,12 @@ export default function Contacto() {
                   maxLength={10}
                   pattern="[0-9]{10}"
                   title="Escribe exactamente los 10 números después del +52"
-                  className="min-w-0 flex-1 bg-transparent px-2.5 py-[4px] text-sm font-semibold text-slate-900 outline-none placeholder:text-slate-400 md:px-3 md:py-[6px] md:text-sm max-[380px]:px-2 max-[380px]:py-[3px]"
+                  className="min-w-0 flex-1 bg-transparent px-2 py-[3px] text-[12px] font-semibold text-slate-900 outline-none placeholder:text-slate-400 md:px-3 md:py-[6px] md:text-sm max-[380px]:px-1.5 max-[380px]:py-[2.5px] max-[380px]:text-[11.5px]"
                 />
               </div>
             </div>
 
-            <div className="grid gap-[2px]">
+            <div className="grid gap-[1px]">
               <label htmlFor="tipoProyecto" className={labelClass}>
                 Escribe el tipo de proyecto
               </label>
@@ -285,7 +285,7 @@ export default function Contacto() {
               />
             </div>
 
-            <div className="grid gap-[2px]">
+            <div className="grid gap-[1px]">
               <label htmlFor="estadoBoton" className={labelClass}>
                 Selecciona tu estado
               </label>
@@ -299,32 +299,32 @@ export default function Contacto() {
               />
             </div>
 
-            <div className="grid gap-[2px]">
+            <div className="grid gap-[1px]">
               <label htmlFor="mensaje" className={labelClass}>
                 Escribe tu mensaje
               </label>
 
               <textarea
-  id="mensaje"
-  name="mensaje"
-  value={formulario.mensaje}
-  onChange={cambiarCampo}
-  placeholder="Cuéntanos brevemente sobre tu proyecto"
-  required
-  rows={2}
-  maxLength={1000}
-  title="Escribe tu mensaje"
-  className={`${inputClass} min-h-[50px] resize-none py-1.5 md:min-h-[54px]`}
-/>
+                id="mensaje"
+                name="mensaje"
+                value={formulario.mensaje}
+                onChange={cambiarCampo}
+                placeholder="Cuéntanos brevemente sobre tu proyecto"
+                required
+                rows={2}
+                maxLength={1000}
+                title="Escribe tu mensaje"
+                className={`${inputClass} min-h-[42px] resize-none py-1 md:min-h-[54px]`}
+              />
             </div>
 
             <button
-  type="submit"
-  disabled={cargando}
-  className="mx-auto mt-1.5 w-fit cursor-pointer rounded-full border border-cyan-100/40 bg-gradient-to-r from-sky-300 via-cyan-200 to-blue-200 px-6 py-2.5 text-center text-[12px] font-black uppercase tracking-wide text-[#07182A] shadow-lg shadow-sky-500/20 outline-none transition-all duration-300 hover:-translate-y-0.5 hover:from-white hover:via-cyan-100 hover:to-sky-200 hover:shadow-xl hover:shadow-cyan-300/25 focus-visible:ring-2 focus-visible:ring-cyan-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0F2A44] active:translate-y-0 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:shadow-lg md:px-7 md:py-2 md:text-[11.5px] max-[380px]:px-5 max-[380px]:py-2 max-[380px]:text-[10px]"
->
-  {cargando ? "Enviando..." : "Enviar solicitud"}
-</button>
+              type="submit"
+              disabled={cargando}
+              className="mx-auto mt-2 mb-0.5 w-fit cursor-pointer rounded-full border border-cyan-100/40 bg-[#86CDFC] px-5 py-2 text-center text-[10.5px] font-black uppercase tracking-wide text-[#07182A] shadow-lg shadow-sky-500/20 outline-none transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#b9e6ff] hover:shadow-xl hover:shadow-cyan-300/25 focus-visible:ring-2 focus-visible:ring-cyan-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0F2A44] active:translate-y-0 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:shadow-lg md:px-7 md:py-2 md:text-[11.5px] max-[380px]:px-4 max-[380px]:py-1.5 max-[380px]:text-[9.5px]"
+            >
+              {cargando ? "Enviando..." : "Enviar solicitud"}
+            </button>
           </form>
         </div>
       </section>

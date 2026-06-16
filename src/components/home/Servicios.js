@@ -43,15 +43,7 @@ const servicios = [
   },
   {
     titulo: "ESG y Sostenibilidad",
-    texto: (
-      <>
-        Integración de criterios ambientales,
-        <br />
-        sociales y de gobernanza en proyectos
-        <br />
-        y organizaciones.
-      </>
-    ),
+    texto: "Integración de criterios ambientales, sociales y de gobernanza en proyectos y organizaciones.",
     imagen: "/images/servicios/ser8.png",
     posicion: "arriba",
   },
@@ -73,52 +65,81 @@ export default function Servicios() {
   return (
     <section
       id="servicios"
-      className="scroll-mt-20 px-4 py-7 md:scroll-mt-24 md:px-8 md:py-10"
+      className="relative -mt-px -mb-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 py-2 md:scroll-mt-24 md:px-8"
     >
-      <div className="mx-auto max-w-7xl">
-        <p className="text-xs font-black uppercase tracking-[0.22em] text-[#30435D]">
-          Servicios
-        </p>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#e4f5ff] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#e4f5ff] to-transparent" />
 
-        <h2 className="mt-3 text-3xl font-black text-[#24344b] md:text-5xl">
-          Soluciones integrales de gestión social
-        </h2>
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="mx-auto max-w-4xl text-center">
+          <div
+            aria-hidden="true"
+            className="mx-auto mb-5 flex w-full max-w-[420px] items-center justify-center gap-3"
+          >
+            <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#86CDFC]/80 to-[#86CDFC]/40" />
+            <span className="h-2.5 w-2.5 rotate-45 rounded-[2px] bg-[#86CDFC] shadow-[0_0_18px_rgba(134,205,252,0.75)]" />
+            <span className="h-px flex-1 bg-gradient-to-l from-transparent via-[#86CDFC]/80 to-[#86CDFC]/40" />
+          </div>
 
-        <div className="mt-5 grid gap-4 md:mt-7 md:grid-cols-2 lg:grid-cols-2">
-          {servicios.map((servicio) => {
+          <div className="mx-auto w-fit rounded-full border border-[#86CDFC]/60 bg-white/45 px-4 py-1.5 shadow-sm shadow-[#30435D]/5">
+            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#30435D] md:text-xs">
+              Servicios
+            </p>
+          </div>
+
+          <h2 className="mx-auto mt-4 max-w-3xl text-[1.7rem] font-black leading-tight tracking-[-0.03em] text-[#24344b] md:mt-5 md:text-5xl">
+            Soluciones integrales de{" "}
+            <span className="text-[#30435D]">gestión social</span>
+          </h2>
+
+          <p className="mx-auto mt-3 max-w-2xl text-sm font-semibold leading-6 text-[#30435D]/85 md:mt-4 md:text-base md:leading-7">
+            Acompañamos proyectos, comunidades e instituciones con estrategias
+            sociales claras, profesionales y sostenibles.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-7 grid max-w-[880px] gap-3.5 md:mt-9 md:grid-cols-[repeat(2,minmax(0,420px))] md:justify-center md:gap-4 xl:max-w-[1030px] xl:grid-cols-[repeat(3,minmax(0,320px))]">
+          {servicios.map((servicio, index) => {
             const textoArriba = servicio.posicion === "arriba";
+            const esUltima = index === servicios.length - 1;
 
             return (
               <article
                 key={servicio.titulo}
-                className="group relative aspect-[16/9] overflow-hidden rounded-2xl shadow-xl shadow-[#30435D]/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#86CDFC]/20 active:scale-[0.98] md:rounded-[1.5rem]"
+                className={`group relative mx-auto aspect-[3/2] w-full max-w-[360px] overflow-hidden rounded-[1.2rem] border border-[#86CDFC]/45 bg-[#eaf4ff] shadow-none ring-1 ring-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/80 hover:shadow-none active:scale-[0.98] min-[390px]:max-w-[375px] min-[430px]:max-w-[390px] sm:max-w-[480px] md:max-w-none md:rounded-[1.65rem] ${
+                  esUltima ? "xl:col-start-2" : ""
+                }`}
               >
                 <img
                   src={servicio.imagen}
                   alt={servicio.titulo}
-                  className="absolute inset-0 h-full w-full object-fill"
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                 />
 
                 <div
                   className={
                     textoArriba
-                      ? "absolute inset-0 bg-gradient-to-br from-[#172338]/95 via-[#172338]/55 to-[#172338]/10"
-                      : "absolute inset-0 bg-gradient-to-tr from-[#172338]/95 via-[#172338]/55 to-[#172338]/5 md:bg-gradient-to-br md:from-[#172338]/95 md:via-[#172338]/55 md:to-[#172338]/10"
+                      ? "absolute inset-0 bg-gradient-to-br from-[#172338]/88 via-[#172338]/44 to-[#172338]/5"
+                      : "absolute inset-0 bg-gradient-to-tr from-[#172338]/88 via-[#172338]/44 to-[#172338]/5 md:bg-gradient-to-br md:from-[#172338]/88 md:via-[#172338]/44 md:to-[#172338]/5"
                   }
                 />
 
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(134,205,252,0.18),transparent_38%)] opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/35 to-transparent md:h-24" />
+
                 <div
-                  className={`relative z-10 flex h-full flex-col p-4 text-white md:items-start md:justify-start md:p-6 md:text-left ${
+                  className={`relative z-10 flex h-full flex-col p-3.5 text-white md:p-5 xl:p-3.5 ${
                     textoArriba
                       ? "items-start justify-start text-left"
                       : "items-start justify-end text-left"
                   }`}
                 >
-                  <h3 className="max-w-xl text-base font-black leading-tight md:text-xl">
+                  <h3 className="max-w-[94%] text-[14px] font-black leading-tight tracking-[-0.01em] text-white drop-shadow-xl min-[380px]:text-[15px] md:max-w-xl md:text-lg xl:text-[14px] xl:leading-tight">
                     {servicio.titulo}
                   </h3>
 
-                  <p className="mt-2 max-w-2xl text-[13px] font-semibold leading-5 text-slate-100 md:text-base md:leading-7">
+                  <p className="mt-1 max-w-[94%] text-[12px] font-semibold leading-[1.4] text-slate-100 drop-shadow-lg min-[380px]:text-[12.5px] md:mt-2 md:max-w-2xl md:text-sm md:leading-6 xl:mt-1.5 xl:text-[11px] xl:leading-[1.35]">
                     {servicio.texto}
                   </p>
                 </div>

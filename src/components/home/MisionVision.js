@@ -1,22 +1,22 @@
 export default function MisionVision() {
   return (
-    <section className="overflow-hidden px-4 py-12 md:px-8 md:py-10">
-      <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2">
-        <div className="group touch-manipulation relative overflow-hidden rounded-[1.5rem] border border-[#d8e8f7] bg-gradient-to-br from-white via-[#f7fbff] to-[#eaf7ff] p-5 shadow-xl shadow-[#30435D]/7 ring-1 ring-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/70 md:rounded-[2rem] md:p-8">
-          <div className="absolute -right-14 -top-14 h-40 w-40 rounded-full bg-[#86CDFC]/25 blur-2xl" />
-          <div className="absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-[#30435D]/5 blur-3xl" />
+    <section className="relative -mt-px -mb-px overflow-hidden bg-[#e4f5ff] px-4 py-3 md:px-8 md:py-3">
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-3 md:grid-cols-2 md:gap-4">
+        <div className="group touch-manipulation relative overflow-hidden rounded-[1.25rem] border border-[#86CDFC]/45 bg-[#f4fbff] p-4 shadow-none ring-1 ring-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/80 hover:bg-white hover:shadow-none md:rounded-[1.75rem] md:p-6">
+          <div className="absolute -right-14 -top-14 h-32 w-32 rounded-full bg-[#86CDFC]/25 blur-2xl md:h-36 md:w-36" />
+          <div className="absolute -bottom-20 -left-20 h-36 w-36 rounded-full bg-[#30435D]/5 blur-3xl md:h-40 md:w-40" />
 
-          <p className="relative text-xs font-black uppercase tracking-[0.22em] text-[#30435D]">
+          <p className="relative text-[10px] font-black uppercase tracking-[0.2em] text-[#30435D] md:text-xs md:tracking-[0.22em]">
             Nuestra visión
           </p>
 
           <img
             src="/images/logon.png"
             alt="Bi Ne Bianni"
-            className="relative mt-4 h-12 w-12 object-contain"
+            className="relative mt-3 h-10 w-10 object-contain md:mt-4 md:h-11 md:w-11"
           />
 
-          <p className="relative mt-4 leading-7 text-slate-700 md:text-lg md:leading-8">
+          <p className="relative mt-3 text-[14px] font-semibold leading-6 text-[#30435D]/85 md:mt-4 md:text-base md:leading-7">
             Ser una firma referente en México en gestión social, sostenibilidad
             y desarrollo territorial, reconocida por generar soluciones
             innovadoras que fortalezcan la relación entre organizaciones,
@@ -24,21 +24,21 @@ export default function MisionVision() {
           </p>
         </div>
 
-        <div className="group touch-manipulation relative overflow-hidden rounded-[1.5rem] border border-[#c8eaff] bg-gradient-to-br from-[#e9f8ff] via-white to-[#f3fbff] p-5 shadow-xl shadow-[#86CDFC]/12 ring-1 ring-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/80 md:rounded-[2rem] md:p-8">
-          <div className="absolute -right-14 -top-14 h-40 w-40 rounded-full bg-[#86CDFC]/30 blur-2xl" />
-          <div className="absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-[#30435D]/5 blur-3xl" />
+        <div className="group touch-manipulation relative overflow-hidden rounded-[1.25rem] border border-[#86CDFC]/45 bg-[#f4fbff] p-4 shadow-none ring-1 ring-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/80 hover:bg-white hover:shadow-none md:rounded-[1.75rem] md:p-6">
+          <div className="absolute -right-14 -top-14 h-32 w-32 rounded-full bg-[#86CDFC]/30 blur-2xl md:h-36 md:w-36" />
+          <div className="absolute -bottom-20 -left-20 h-36 w-36 rounded-full bg-[#30435D]/5 blur-3xl md:h-40 md:w-40" />
 
-          <p className="relative text-xs font-black uppercase tracking-[0.22em] text-[#30435D]">
+          <p className="relative text-[10px] font-black uppercase tracking-[0.2em] text-[#30435D] md:text-xs md:tracking-[0.22em]">
             Nuestra misión
           </p>
 
           <img
             src="/images/logon.png"
             alt="Bi Ne Bianni"
-            className="relative mt-4 h-12 w-12 object-contain"
+            className="relative mt-3 h-10 w-10 object-contain md:mt-4 md:h-11 md:w-11"
           />
 
-          <p className="relative mt-4 leading-7 text-slate-700 md:text-lg md:leading-8">
+          <p className="relative mt-3 text-[14px] font-semibold leading-6 text-[#30435D]/85 md:mt-4 md:text-base md:leading-7">
             Impulsar la sostenibilidad social de proyectos mediante soluciones
             integrales de gestión social, relacionamiento comunitario y creación
             de valor compartido que contribuyan al desarrollo responsable de los
@@ -47,21 +47,14 @@ export default function MisionVision() {
         </div>
       </div>
 
-      <div className="relative left-1/2 mt-7 w-screen -translate-x-1/2 px-2 md:left-auto md:mx-auto md:mt-8 md:w-full md:max-w-7xl md:translate-x-0 md:px-0">
-        <div className="group relative overflow-hidden rounded-[1.25rem] border border-[#dbe8f3] bg-gradient-to-br from-white via-[#f7fbff] to-[#e9f8ff] p-1 shadow-2xl shadow-[#30435D]/12 ring-1 ring-white/80 md:rounded-[2.25rem] md:p-3">
-          <div className="absolute -left-16 -top-16 h-44 w-44 rounded-full bg-[#86CDFC]/25 blur-3xl" />
-          <div className="absolute -bottom-20 -right-20 h-52 w-52 rounded-full bg-[#30435D]/10 blur-3xl" />
-
-          <div className="relative overflow-hidden rounded-[1rem] bg-[#f7fbff] md:rounded-[1.85rem]">
+      <div className="relative left-1/2 z-10 mt-5 w-screen -translate-x-1/2 px-2 md:left-auto md:mx-auto md:mt-7 md:w-[75%] md:max-w-3xl md:translate-x-0 md:px-0 lg:max-w-3xl">
+        <div className="group relative overflow-hidden rounded-[1rem] border border-[#86CDFC]/45 bg-[#f4fbff] p-1 ring-1 ring-white/80 md:rounded-[1.6rem] md:p-2">
+          <div className="relative overflow-hidden rounded-[0.85rem] bg-[#e4f5ff] md:rounded-[1.3rem]">
             <img
               src="/images/foto-3.png"
               alt="Separador visual de sostenibilidad y territorio"
               className="relative z-10 block h-auto w-full object-contain transition-transform duration-700 group-hover:scale-[1.005]"
             />
-
-            <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-[#30435D]/10 via-transparent to-white/5" />
-
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-14 bg-gradient-to-t from-[#30435D]/14 to-transparent md:h-24 md:from-[#30435D]/20" />
           </div>
         </div>
       </div>

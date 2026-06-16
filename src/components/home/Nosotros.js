@@ -2,56 +2,84 @@ export default function Nosotros() {
   return (
     <section
       id="nosotros"
-      className="scroll-mt-20 bg-gradient-to-br from-[#1f2d40] via-[#30435D] to-[#172338] px-4 py-12 text-white md:scroll-mt-24 md:px-8 md:py-20"
+      className="relative -mt-px -mb-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 py-2 md:scroll-mt-24 md:px-8 md:py-4"
     >
-      <div className="mx-auto grid max-w-7xl gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-        <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-white/15 shadow-2xl shadow-black/20">
-          <img
-            src="/images/222.png"
-            alt="Relaciones comunitarias y valor compartido"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+      <div className="pointer-events-none absolute -left-32 top-10 h-64 w-64 rounded-full bg-[#86CDFC]/20 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 bottom-6 h-72 w-72 rounded-full bg-white/35 blur-3xl" />
 
-          <div className="absolute inset-0 bg-[#172338]/55" />
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div
+          aria-hidden="true"
+          className="mx-auto mb-4 flex w-full max-w-[420px] items-center justify-center gap-3"
+        >
+          <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#86CDFC]/80 to-[#86CDFC]/40" />
+          <span className="h-2.5 w-2.5 rotate-45 rounded-[2px] bg-[#86CDFC] shadow-[0_0_18px_rgba(134,205,252,0.75)]" />
+          <span className="h-px flex-1 bg-gradient-to-l from-transparent via-[#86CDFC]/80 to-[#86CDFC]/40" />
+        </div>
 
-          <div className="relative flex min-h-[360px] flex-col items-center justify-center px-6 py-8 text-center md:px-8 lg:px-9">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#9edaff] md:text-sm">
-              Quiénes somos
-            </p>
+        <div className="mx-auto grid items-center gap-4 lg:grid-cols-[0.82fr_1.18fr] lg:gap-7">
+          <div className="relative mx-auto min-h-[250px] w-full max-w-[510px] overflow-hidden rounded-[1.5rem] border border-[#86CDFC]/50 bg-[#f4fbff] ring-1 ring-white/80 md:min-h-[295px] md:rounded-[2rem]">
+            <img
+              src="/images/222.png"
+              alt="Relaciones comunitarias y valor compartido"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
 
-            <h2 className="mt-3 max-w-[520px] text-2xl font-black leading-tight text-white drop-shadow-xl md:text-3xl lg:text-[2.05rem]">
-              Construimos relaciones que generan valor compartido
-            </h2>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#172338]/70 via-[#30435D]/50 to-[#86CDFC]/20" />
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#172338]/70 to-transparent" />
 
-            <div className="mt-5 h-1 w-16 rounded-full bg-[#86CDFC]" />
+            <div className="relative flex min-h-[250px] flex-col items-center justify-center px-6 py-5 text-center md:min-h-[295px] md:px-8 md:py-6 lg:px-9">
+              <div className="rounded-full border border-white/20 bg-white/10 px-4 py-1 backdrop-blur-sm">
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#bfeaff] md:text-xs">
+                  Quiénes somos
+                </p>
+              </div>
+
+              <h2 className="mt-3 max-w-[500px] text-[1.5rem] font-black leading-tight text-white drop-shadow-xl md:text-3xl lg:text-[2.05rem]">
+                Construimos relaciones que generan valor compartido
+              </h2>
+
+              <div className="mt-4 h-1 w-16 rounded-full bg-[#86CDFC]" />
+            </div>
+          </div>
+
+          <div className="mx-auto w-full max-w-3xl rounded-[1.5rem] border border-[#86CDFC]/35 bg-white/45 px-4 py-4 text-center ring-1 ring-white/70 backdrop-blur-sm md:rounded-[2rem] md:px-6 md:py-5 lg:px-7">
+            <div className="space-y-2 text-[14px] font-semibold leading-6 text-[#30435D]/90 md:text-base md:leading-7">
+              <p className="text-[15px] font-black leading-6 text-[#24344b] md:text-lg md:leading-7">
+                Consultoría Social Bi Ne Bianni es una firma mexicana especializada
+                en gestión social, sostenibilidad y desarrollo territorial.
+              </p>
+
+              <p>
+                Constituida formalmente en 2025 y respaldada por una trayectoria
+                profesional que se remonta a 2010, nuestra firma acompaña a
+                empresas, desarrolladores e instituciones en el diseño e
+                implementación de estrategias que fortalecen la relación entre
+                proyectos, comunidades y actores clave.
+              </p>
+
+              <p>
+                Nuestra experiencia combina conocimiento técnico, comprensión
+                territorial y una visión estratégica que permite identificar
+                oportunidades, gestionar riesgos sociales y construir relaciones de
+                confianza que favorecen la sostenibilidad de largo plazo.
+              </p>
+
+              <p className="mx-auto max-w-2xl rounded-2xl border border-[#86CDFC]/35 bg-[#e4f5ff]/70 px-4 py-2 font-black text-[#24344b]">
+                A lo largo de nuestra trayectoria hemos participado en más de 200
+                proyectos desarrollados en 10 estados de la República Mexicana.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="max-w-3xl space-y-4 text-base leading-7 text-slate-100 md:text-lg md:leading-8 lg:pl-2">
-          <p className="font-semibold text-white">
-            Consultoría Social Bi Ne Bianni es una firma mexicana especializada
-            en gestión social, sostenibilidad y desarrollo territorial.
-          </p>
-
-          <p>
-            Constituida formalmente en 2025 y respaldada por una trayectoria
-            profesional que se remonta a 2010, nuestra firma acompaña a
-            empresas, desarrolladores e instituciones en el diseño e
-            implementación de estrategias que fortalecen la relación entre
-            proyectos, comunidades y actores clave.
-          </p>
-
-          <p>
-            Nuestra experiencia combina conocimiento técnico, comprensión
-            territorial y una visión estratégica que permite identificar
-            oportunidades, gestionar riesgos sociales y construir relaciones de
-            confianza que favorecen la sostenibilidad de largo plazo.
-          </p>
-
-          <p>
-            A lo largo de nuestra trayectoria hemos participado en más de 200
-            proyectos desarrollados en 10 estados de la República Mexicana.
-          </p>
+        <div
+          aria-hidden="true"
+          className="mx-auto mt-4 flex w-full max-w-[420px] items-center justify-center gap-3"
+        >
+          <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#86CDFC]/80 to-[#86CDFC]/40" />
+          <span className="h-2.5 w-2.5 rotate-45 rounded-[2px] bg-[#86CDFC] shadow-[0_0_18px_rgba(134,205,252,0.75)]" />
+          <span className="h-px flex-1 bg-gradient-to-l from-transparent via-[#86CDFC]/80 to-[#86CDFC]/40" />
         </div>
       </div>
     </section>
