@@ -58,7 +58,7 @@ export default function Valores() {
           {valores.map((valor) => (
             <article
               key={valor.titulo}
-              className="group touch-manipulation grid min-h-[92px] grid-cols-[64px_1fr] items-center gap-3 rounded-2xl border border-[#86CDFC]/45 bg-[#f4fbff] px-3 py-3 shadow-none transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/80 hover:bg-white hover:shadow-none active:scale-[0.98] active:shadow-none md:block md:min-h-[205px] md:rounded-3xl md:p-5"
+              className="group touch-manipulation grid min-h-[92px] cursor-pointer grid-cols-[64px_1fr] items-center gap-3 rounded-2xl border border-[#86CDFC]/45 bg-[#f4fbff] px-3 py-3 shadow-none transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/80 hover:bg-white hover:shadow-none active:scale-[0.98] active:shadow-none md:block md:min-h-[205px] md:rounded-3xl md:p-5"
             >
               <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#86CDFC]/35 to-[#B5CDDF]/30 p-2 shadow-none transition-transform duration-300 group-hover:scale-105 md:mx-auto md:h-[84px] md:w-[84px] md:rounded-[1.4rem] md:p-3 lg:h-[90px] lg:w-[90px]">
                 <img

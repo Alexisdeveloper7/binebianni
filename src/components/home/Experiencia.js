@@ -32,7 +32,7 @@ export default function Experiencia() {
   return (
     <section
       id="experiencia"
-      className="relative -mt-px -mb-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 pt-4 pb-2 md:scroll-mt-24 md:px-8 md:pt-5 md:pb- lg:pt-6 lg:pb-10"
+      className="relative -mt-px -mb-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 pt-4 pb-2 md:scroll-mt-24 md:px-8 md:pt-5 md:pb-6 lg:pt-6 lg:pb-10"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="mb-5 text-center md:mb-7">
@@ -58,17 +58,17 @@ export default function Experiencia() {
           {indicadores.map((indicador, index) => (
             <article
               key={index}
-              className="group relative w-full overflow-hidden rounded-[1.2rem] border border-[#86CDFC]/35 bg-[#f7fcff] p-3 ring-1 ring-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#86CDFC]/65 hover:bg-white md:rounded-[1.35rem] md:p-4 lg:rounded-[1.45rem] lg:p-3.5"
+              className="group touch-manipulation relative w-full cursor-pointer overflow-hidden rounded-[1.2rem] border border-[#86CDFC]/35 bg-[#f7fcff] p-3 ring-1 ring-white/70 transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/75 hover:bg-white hover:ring-[#86CDFC]/25 active:scale-[0.99] md:rounded-[1.35rem] md:p-4 lg:rounded-[1.45rem] lg:p-3.5"
             >
-              <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#86CDFC]/18 blur-2xl transition-all duration-300 group-hover:bg-[#86CDFC]/25" />
-              <div className="absolute -bottom-16 -left-16 h-32 w-32 rounded-full bg-[#30435D]/4 blur-3xl" />
+              <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#86CDFC]/18 blur-2xl transition-all duration-300 group-hover:bg-[#86CDFC]/30" />
+              <div className="absolute -bottom-16 -left-16 h-32 w-32 rounded-full bg-[#30435D]/4 blur-3xl transition-all duration-300 group-hover:bg-[#30435D]/7" />
 
               <div className="relative flex min-h-[88px] min-w-0 items-center gap-3 text-left md:min-h-[108px] md:gap-4 lg:min-h-[155px] lg:flex-col lg:justify-center lg:gap-0 lg:text-center">
-                <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[1.1rem] bg-white ring-1 ring-[#86CDFC]/25 lg:mb-3 lg:h-[72px] lg:w-[72px] lg:rounded-[1.15rem]">
+                <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[1.1rem] bg-white ring-1 ring-[#86CDFC]/25 transition-all duration-300 group-hover:ring-[#86CDFC]/55 lg:mb-3 lg:h-[72px] lg:w-[72px] lg:rounded-[1.15rem]">
                   <img
                     src={indicador.icono}
                     alt={indicador.alt}
-                    className={`object-contain ${
+                    className={`object-contain transition-transform duration-300 group-hover:scale-110 ${
                       indicador.icono === "/images/ico3.png"
                         ? "h-24 w-24 md:h-24 md:w-24 lg:h-[88px] lg:w-[88px]"
                         : "h-14 w-14 md:h-16 md:w-16 lg:h-14 lg:w-14"
@@ -79,21 +79,21 @@ export default function Experiencia() {
                 <div className="min-w-0 flex-1 overflow-hidden lg:w-full lg:flex-none">
                   {indicador.numero ? (
                     <div className="flex max-w-full flex-wrap items-end gap-x-1 gap-y-0 overflow-hidden text-[#30435D] lg:justify-center">
-                      <span className="min-w-0 text-[1.55rem] font-black leading-none sm:text-[1.7rem] md:text-[2.15rem] lg:text-[2.15rem]">
+                      <span className="min-w-0 text-[1.55rem] font-black leading-none transition-colors duration-300 group-hover:text-[#172338] sm:text-[1.7rem] md:text-[2.15rem] lg:text-[2.15rem]">
                         {indicador.numero}
                       </span>
 
-                      <span className="min-w-0 max-w-full break-words pb-[2px] text-[12px] font-black leading-none sm:text-[12.8px] md:pb-1 md:text-[14.5px] lg:text-[14px]">
+                      <span className="min-w-0 max-w-full break-words pb-[2px] text-[12px] font-black leading-none transition-colors duration-300 group-hover:text-[#172338] sm:text-[12.8px] md:pb-1 md:text-[14.5px] lg:text-[14px]">
                         {indicador.unidad}
                       </span>
                     </div>
                   ) : (
-                    <h3 className="max-w-full break-words text-[17px] font-black leading-tight text-[#30435D] sm:text-[18px] md:text-[1.35rem] lg:text-[1.2rem]">
+                    <h3 className="max-w-full break-words text-[17px] font-black leading-tight text-[#30435D] transition-colors duration-300 group-hover:text-[#172338] sm:text-[18px] md:text-[1.35rem] lg:text-[1.2rem]">
                       {indicador.titulo}
                     </h3>
                   )}
 
-                  <p className="mt-1 max-w-full break-words text-[11px] font-semibold leading-snug text-[#30435D]/75 sm:text-[11.4px] md:mt-2 md:max-w-none md:text-[12.5px] md:leading-relaxed lg:mx-auto lg:mt-2 lg:max-w-[150px] lg:text-[11.5px]">
+                  <p className="mt-1 max-w-full break-words text-[11px] font-semibold leading-snug text-[#30435D]/75 transition-colors duration-300 group-hover:text-[#30435D]/90 sm:text-[11.4px] md:mt-2 md:max-w-none md:text-[12.5px] md:leading-relaxed lg:mx-auto lg:mt-2 lg:max-w-[150px] lg:text-[11.5px]">
                     {indicador.texto}
                   </p>
                 </div>

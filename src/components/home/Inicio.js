@@ -68,7 +68,7 @@ export default function Inicio() {
             <button
               type="button"
               onClick={() => irASeccion("experiencia")}
-              className="touch-manipulation cursor-pointer rounded-full bg-gradient-to-r from-[#24344b] via-[#30435D] to-[#1f2d40] px-6 py-3.5 text-center text-xs font-bold uppercase tracking-wide text-white shadow-lg shadow-[#30435D]/25 outline-none ring-1 ring-white/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#30435D]/35 focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 active:translate-y-0 active:scale-[0.98]"
+              className="touch-manipulation cursor-pointer rounded-full bg-gradient-to-r from-[#24344b] via-[#30435D] to-[#1f2d40] px-6 py-3.5 text-center text-xs font-bold uppercase tracking-wide text-white outline-none ring-1 ring-white/20 transition-all duration-300 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 active:translate-y-0 active:scale-[0.98]"
             >
               Conoce nuestra experiencia
             </button>

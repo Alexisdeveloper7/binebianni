@@ -33,7 +33,7 @@ export default function ConsultoriaEspecializada() {
                 {items.map((item) => (
                   <div
                     key={item}
-                    className="touch-manipulation rounded-2xl border border-[#86CDFC]/30 bg-[#86CDFC]/10 px-4 py-3 text-sm font-semibold shadow-sm shadow-black/5 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[#86CDFC]/60 hover:bg-[#86CDFC]/15 active:scale-[0.99] active:border-[#86CDFC]/60 active:bg-[#86CDFC]/15"
+                    className="touch-manipulation cursor-pointer rounded-2xl border border-[#86CDFC]/30 bg-[#86CDFC]/10 px-4 py-3 text-sm font-semibold shadow-sm shadow-black/5 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[#86CDFC]/60 hover:bg-[#86CDFC]/15 active:scale-[0.99] active:border-[#86CDFC]/60 active:bg-[#86CDFC]/15"
                   >
                     {item}
                   </div>

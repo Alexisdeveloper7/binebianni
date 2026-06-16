@@ -18,18 +18,18 @@ export default function Nosotros() {
         </div>
 
         <div className="mx-auto grid items-center gap-4 lg:grid-cols-[0.82fr_1.18fr] lg:gap-7">
-          <div className="relative mx-auto min-h-[250px] w-full max-w-[510px] overflow-hidden rounded-[1.5rem] border border-[#86CDFC]/50 bg-[#f4fbff] ring-1 ring-white/80 md:min-h-[295px] md:rounded-[2rem]">
+          <div className="group touch-manipulation relative mx-auto min-h-[250px] w-full max-w-[510px] cursor-pointer overflow-hidden rounded-[1.5rem] border border-[#86CDFC]/50 bg-[#f4fbff] ring-1 ring-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/90 hover:bg-white active:scale-[0.99] md:min-h-[295px] md:rounded-[2rem]">
             <img
               src="/images/222.png"
               alt="Relaciones comunitarias y valor compartido"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-br from-[#172338]/70 via-[#30435D]/50 to-[#86CDFC]/20" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#172338]/70 via-[#30435D]/50 to-[#86CDFC]/20 transition-all duration-300 group-hover:from-[#172338]/65 group-hover:via-[#30435D]/45 group-hover:to-[#86CDFC]/28" />
             <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#172338]/70 to-transparent" />
 
             <div className="relative flex min-h-[250px] flex-col items-center justify-center px-6 py-5 text-center md:min-h-[295px] md:px-8 md:py-6 lg:px-9">
-              <div className="rounded-full border border-white/20 bg-white/10 px-4 py-1 backdrop-blur-sm">
+              <div className="rounded-full border border-white/20 bg-white/10 px-4 py-1 backdrop-blur-sm transition-all duration-300 group-hover:border-[#86CDFC]/50 group-hover:bg-white/15">
                 <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#bfeaff] md:text-xs">
                   Quiénes somos
                 </p>
@@ -39,15 +39,16 @@ export default function Nosotros() {
                 Construimos relaciones que generan valor compartido
               </h2>
 
-              <div className="mt-4 h-1 w-16 rounded-full bg-[#86CDFC]" />
+              <div className="mt-4 h-1 w-16 rounded-full bg-[#86CDFC] transition-all duration-300 group-hover:w-20 group-hover:bg-[#bfeaff]" />
             </div>
           </div>
 
-          <div className="mx-auto w-full max-w-3xl rounded-[1.5rem] border border-[#86CDFC]/35 bg-white/45 px-4 py-4 text-center ring-1 ring-white/70 backdrop-blur-sm md:rounded-[2rem] md:px-6 md:py-5 lg:px-7">
+          <div className="group touch-manipulation mx-auto w-full max-w-3xl cursor-pointer rounded-[1.5rem] border border-[#86CDFC]/35 bg-white/45 px-4 py-4 text-center ring-1 ring-white/70 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/80 hover:bg-white/60 active:scale-[0.99] md:rounded-[2rem] md:px-6 md:py-5 lg:px-7">
             <div className="space-y-2 text-[14px] font-semibold leading-6 text-[#30435D]/90 md:text-base md:leading-7">
-              <p className="text-[15px] font-black leading-6 text-[#24344b] md:text-lg md:leading-7">
-                Consultoría Social Bi Ne Bianni es una firma mexicana especializada
-                en gestión social, sostenibilidad y desarrollo territorial.
+              <p className="text-[15px] font-black leading-6 text-[#24344b] transition-colors duration-300 group-hover:text-[#172338] md:text-lg md:leading-7">
+                Consultoría Social Bi Ne Bianni es una firma mexicana
+                especializada en gestión social, sostenibilidad y desarrollo
+                territorial.
               </p>
 
               <p>
@@ -61,11 +62,9 @@ export default function Nosotros() {
               <p>
                 Nuestra experiencia combina conocimiento técnico, comprensión
                 territorial y una visión estratégica que permite identificar
-                oportunidades, gestionar riesgos sociales y construir relaciones de
-                confianza que favorecen la sostenibilidad de largo plazo.
+                oportunidades, gestionar riesgos sociales y construir relaciones
+                de confianza que favorecen la sostenibilidad de largo plazo.
               </p>
-
-              
             </div>
           </div>
         </div>

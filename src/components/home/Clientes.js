@@ -32,7 +32,7 @@ export default function Clientes() {
           {clientes.map((cliente) => (
             <div
               key={cliente}
-              className="group touch-manipulation relative overflow-hidden rounded-[1.15rem] border border-[#86CDFC]/50 bg-[#f4fbff] p-4 text-center shadow-[0_8px_18px_rgba(48,67,93,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC] hover:bg-white hover:shadow-[0_10px_22px_rgba(48,67,93,0.08)] active:scale-[0.99] md:rounded-[1.5rem] md:p-6"
+              className="group touch-manipulation relative cursor-pointer overflow-hidden rounded-[1.15rem] border border-[#86CDFC]/50 bg-[#f4fbff] p-4 text-center shadow-[0_8px_18px_rgba(48,67,93,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC] hover:bg-white hover:shadow-[0_10px_22px_rgba(48,67,93,0.08)] active:scale-[0.99] md:rounded-[1.5rem] md:p-6"
             >
               <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#86CDFC]/18 blur-2xl transition-all duration-300 group-hover:bg-[#86CDFC]/28" />
               <div className="absolute -left-14 bottom-0 h-24 w-24 rounded-full bg-[#86CDFC]/10 blur-2xl" />

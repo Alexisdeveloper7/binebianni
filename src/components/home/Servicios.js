@@ -106,7 +106,7 @@ export default function Servicios() {
             return (
               <article
                 key={servicio.titulo}
-                className={`group relative mx-auto aspect-[3/2] w-full max-w-[360px] overflow-hidden rounded-[1.2rem] border border-[#86CDFC]/45 bg-[#eaf4ff] shadow-none ring-1 ring-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/80 hover:shadow-none active:scale-[0.98] min-[390px]:max-w-[375px] min-[430px]:max-w-[390px] sm:max-w-[480px] md:max-w-none md:rounded-[1.65rem] ${
+                className={`group relative mx-auto aspect-[3/2] w-full max-w-[360px] cursor-pointer overflow-hidden rounded-[1.2rem] border border-[#86CDFC]/45 bg-[#eaf4ff] shadow-none ring-1 ring-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#86CDFC]/80 hover:shadow-none active:scale-[0.98] min-[390px]:max-w-[375px] min-[430px]:max-w-[390px] sm:max-w-[480px] md:max-w-none md:rounded-[1.65rem] ${
                   esUltima ? "xl:col-start-2" : ""
                 }`}
               >
