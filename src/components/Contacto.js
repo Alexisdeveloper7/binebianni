@@ -19,7 +19,7 @@ const estadoInicial = {
 };
 
 const inputClass =
-  "rounded-lg border border-cyan-300/35 bg-white/95 px-2 py-[3px] text-[12px] font-semibold text-slate-900 shadow-[0_4px_12px_rgba(8,47,73,0.13)] outline-none transition-all duration-300 placeholder:text-slate-400 hover:border-sky-300 hover:bg-white hover:shadow-[0_6px_16px_rgba(14,165,233,0.18)] focus:border-sky-300 focus:bg-white focus:ring-2 focus:ring-sky-300/55 md:rounded-xl md:px-3 md:py-[6px] md:text-sm max-[380px]:px-1.5 max-[380px]:py-[2.5px] max-[380px]:text-[11.5px]";
+  "rounded-lg border border-cyan-300/35 bg-white/95 px-2 py-[4px] text-[16px] leading-[1.15] font-semibold text-slate-900 shadow-[0_4px_12px_rgba(8,47,73,0.13)] outline-none transition-all duration-300 hover:border-sky-300 hover:bg-white hover:shadow-[0_6px_16px_rgba(14,165,233,0.18)] focus:border-sky-300 focus:bg-white focus:ring-2 focus:ring-sky-300/55 md:rounded-xl md:px-3 md:py-[6px] md:text-sm max-[380px]:px-1.5 max-[380px]:py-[3px] max-[380px]:text-[16px]";
 
 const labelClass =
   "pl-0.5 text-[7px] font-black uppercase tracking-[0.07em] text-cyan-100 drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)] md:text-[8.5px] md:tracking-[0.09em] max-[380px]:text-[6.8px]";
@@ -133,7 +133,7 @@ export default function Contacto() {
     <>
       <section
         id="contacto"
-        className="relative isolate -mt-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 pt- pb-2 sm:px-5 sm:pb-9 md:scroll-mt-24 md:px-8 md:pt-1 md:pb-7 max-[380px]:px-3 max-[380px]:pt-0"
+        className="relative isolate -mt-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 pt-0 pb-2 sm:px-5 sm:pb-9 md:scroll-mt-24 md:px-8 md:pt-1 md:pb-7 max-[380px]:px-3 max-[380px]:pt-0"
       >
         <div className="relative isolate mx-auto grid w-full max-w-[430px] gap-1 overflow-hidden rounded-[0.85rem] border border-white/15 bg-[#0F2A44] p-1.5 text-white shadow-none sm:max-w-5xl sm:grid-cols-[0.82fr_1.18fr] sm:gap-2 sm:p-2 md:gap-2.5 md:rounded-[1.4rem] md:p-3 lg:max-w-7xl lg:grid-cols-[0.85fr_1.15fr] max-[380px]:gap-1 max-[380px]:p-1.5">
           <img
@@ -166,7 +166,7 @@ export default function Contacto() {
           >
             <div className="grid gap-[1px]">
               <label htmlFor="nombre" className={labelClass}>
-                Escribe tu nombre
+                Nombre completo
               </label>
 
               <input
@@ -174,17 +174,17 @@ export default function Contacto() {
                 name="nombre"
                 value={formulario.nombre}
                 onChange={cambiarCampo}
-                placeholder="Nombre"
                 required
                 maxLength={80}
-                title="Escribe tu nombre"
+                title="Escribe tu nombre completo"
+                autoComplete="name"
                 className={inputClass}
               />
             </div>
 
             <div className="grid gap-[1px]">
               <label htmlFor="empresa" className={labelClass}>
-                Escribe tu empresa
+                Empresa
               </label>
 
               <input
@@ -192,17 +192,17 @@ export default function Contacto() {
                 name="empresa"
                 value={formulario.empresa}
                 onChange={cambiarCampo}
-                placeholder="Empresa"
                 required
                 maxLength={120}
-                title="Escribe tu empresa"
+                title="Escribe el nombre de tu empresa"
+                autoComplete="organization"
                 className={inputClass}
               />
             </div>
 
             <div className="grid gap-[1px]">
               <label htmlFor="cargo" className={labelClass}>
-                Escribe tu cargo
+                Cargo
               </label>
 
               <input
@@ -210,17 +210,17 @@ export default function Contacto() {
                 name="cargo"
                 value={formulario.cargo}
                 onChange={cambiarCampo}
-                placeholder="Cargo"
                 required
                 maxLength={80}
                 title="Escribe tu cargo"
+                autoComplete="organization-title"
                 className={inputClass}
               />
             </div>
 
             <div className="grid gap-[1px]">
               <label htmlFor="correo" className={labelClass}>
-                Escribe tu correo
+                Correo electrónico
               </label>
 
               <input
@@ -229,7 +229,6 @@ export default function Contacto() {
                 name="correo"
                 value={formulario.correo}
                 onChange={cambiarCampo}
-                placeholder="Correo electrónico"
                 required
                 maxLength={120}
                 pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
@@ -241,7 +240,7 @@ export default function Contacto() {
 
             <div className="grid gap-[1px]">
               <label htmlFor="telefono" className={labelClass}>
-                Escribe tu teléfono
+                Teléfono
               </label>
 
               <div className="flex overflow-hidden rounded-lg border border-cyan-300/35 bg-white/95 shadow-[0_4px_12px_rgba(8,47,73,0.13)] transition-all duration-300 hover:border-sky-300 hover:bg-white hover:shadow-[0_6px_16px_rgba(14,165,233,0.18)] focus-within:border-sky-300 focus-within:bg-white focus-within:ring-2 focus-within:ring-sky-300/55 md:rounded-xl">
@@ -255,21 +254,20 @@ export default function Contacto() {
                   name="telefono"
                   value={formulario.telefono}
                   onChange={cambiarCampo}
-                  placeholder="10 dígitos"
                   required
                   inputMode="numeric"
                   autoComplete="tel-national"
                   maxLength={10}
                   pattern="[0-9]{10}"
                   title="Escribe exactamente los 10 números después del +52"
-                  className="min-w-0 flex-1 bg-transparent px-2 py-[3px] text-[12px] font-semibold text-slate-900 outline-none placeholder:text-slate-400 md:px-3 md:py-[6px] md:text-sm max-[380px]:px-1.5 max-[380px]:py-[2.5px] max-[380px]:text-[11.5px]"
+                  className="min-w-0 flex-1 bg-transparent px-2 py-[4px] text-[16px] leading-[1.15] font-semibold text-slate-900 outline-none md:px-3 md:py-[6px] md:text-sm max-[380px]:px-1.5 max-[380px]:py-[3px] max-[380px]:text-[16px]"
                 />
               </div>
             </div>
 
             <div className="grid gap-[1px]">
               <label htmlFor="tipoProyecto" className={labelClass}>
-                Escribe el tipo de proyecto
+                Tipo de proyecto
               </label>
 
               <input
@@ -277,7 +275,6 @@ export default function Contacto() {
                 name="tipoProyecto"
                 value={formulario.tipoProyecto}
                 onChange={cambiarCampo}
-                placeholder="Tipo de proyecto"
                 required
                 maxLength={120}
                 title="Escribe el tipo de proyecto"
@@ -287,7 +284,7 @@ export default function Contacto() {
 
             <div className="grid gap-[1px]">
               <label htmlFor="estadoBoton" className={labelClass}>
-                Selecciona tu estado
+                Estado
               </label>
 
               <DropdownEstados
@@ -301,7 +298,7 @@ export default function Contacto() {
 
             <div className="grid gap-[1px]">
               <label htmlFor="mensaje" className={labelClass}>
-                Escribe tu mensaje
+                Mensaje
               </label>
 
               <textarea
@@ -309,7 +306,6 @@ export default function Contacto() {
                 name="mensaje"
                 value={formulario.mensaje}
                 onChange={cambiarCampo}
-                placeholder="Cuéntanos brevemente sobre tu proyecto"
                 required
                 rows={2}
                 maxLength={1000}
