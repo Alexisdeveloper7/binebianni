@@ -134,126 +134,273 @@ export async function POST(request) {
     const asunto = `Nueva solicitud de contacto - ${nombre}`;
 
     const html = `
-      <div style="margin:0; padding:0; background:#eaf6ff; font-family:Arial, Helvetica, sans-serif; color:#07182A;">
-        <div style="max-width:640px; margin:0 auto; padding:16px 10px;">
-          <div style="background:#ffffff; border-radius:18px; overflow:hidden; border:1px solid #9bdcf8; box-shadow:0 14px 34px rgba(14,165,233,0.18);">
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="supported-color-schemes" content="dark light" />
+    <style>
+      :root {
+        color-scheme: dark light;
+        supported-color-schemes: dark light;
+      }
 
-            <div style="background:linear-gradient(135deg,#07182A,#0F2A44,#1E4D6E); padding:18px 18px 16px; color:white;">
-              <div style="display:inline-block; margin:0 0 8px; padding:4px 10px; border-radius:999px; background:rgba(255,255,255,0.12); border:1px solid rgba(125,211,252,0.45); color:#cffafe; font-size:10px; font-weight:900; letter-spacing:1.5px; text-transform:uppercase;">
-                Formulario de contacto
-              </div>
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #061827 !important;
+        color: #f8fafc !important;
+      }
 
-              <h1 style="margin:0; color:white; font-size:24px; line-height:1.15; font-weight:900; letter-spacing:-0.4px;">
-                Nueva solicitud de contacto
-              </h1>
+      table,
+      td,
+      div,
+      p,
+      h1,
+      span,
+      a {
+        color: #f8fafc !important;
+      }
 
-              <p style="margin:8px 0 0; color:#e0f2fe; font-size:13px; line-height:1.5; font-weight:700;">
-                Se recibió una nueva solicitud desde la página web de Consultoría Social Bi Ne Bianni.
-              </p>
-            </div>
+      a {
+        color: #86cdfc !important;
+      }
 
-            <div style="padding:16px 18px 18px; background:#ffffff;">
-              <div style="margin-bottom:10px; padding:9px 11px; background:#edf9ff; border:1px solid #9bdcf8; border-radius:12px;">
-                <p style="margin:0; color:#07182A; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:1.3px;">
-                  Información recibida
+      .texto-principal {
+        color: #f8fafc !important;
+      }
+
+      .texto-secundario {
+        color: #d8eafe !important;
+      }
+
+      .texto-muted {
+        color: #b8d4e8 !important;
+      }
+
+      .fondo-pagina {
+        background: #061827 !important;
+      }
+
+      .fondo-card {
+        background: #0f2a44 !important;
+      }
+
+      .fondo-bloque {
+        background: #123452 !important;
+      }
+
+      .fondo-bloque-2 {
+        background: #0b2238 !important;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html,
+        body,
+        table,
+        td,
+        div {
+          background-color: #061827 !important;
+          color: #f8fafc !important;
+        }
+
+        p,
+        h1,
+        span,
+        a {
+          color: #f8fafc !important;
+        }
+
+        a {
+          color: #86cdfc !important;
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        html,
+        body {
+          background-color: #061827 !important;
+          color: #f8fafc !important;
+        }
+
+        table,
+        td,
+        div,
+        p,
+        h1,
+        span,
+        a {
+          color: #f8fafc !important;
+        }
+
+        a {
+          color: #86cdfc !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body bgcolor="#061827" style="margin:0; padding:0; background:#061827 !important; color:#f8fafc !important; font-family:Arial, Helvetica, sans-serif;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#061827" style="width:100%; margin:0; padding:0; background:#061827 !important; color:#f8fafc !important;">
+      <tr>
+        <td align="center" bgcolor="#061827" style="padding:16px 10px; background:#061827 !important; color:#f8fafc !important;">
+
+          <table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#0f2a44" style="width:100%; max-width:640px; background:#0f2a44 !important; border:1px solid #2f6685; border-radius:16px; overflow:hidden; color:#f8fafc !important;">
+            
+            <tr>
+              <td bgcolor="#0b2238" style="padding:18px 18px 16px; background:#0b2238 !important; border-bottom:1px solid #2f6685; color:#f8fafc !important;">
+                
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 9px;">
+                  <tr>
+                    <td bgcolor="#123452" style="background:#123452 !important; border:1px solid #3c7ea3; border-radius:999px; padding:5px 10px; color:#dff4ff !important;">
+                      <span style="display:block; color:#dff4ff !important; font-size:10px; font-weight:900; letter-spacing:1.5px; text-transform:uppercase;">
+                        Formulario de contacto
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+
+                <h1 style="margin:0; color:#ffffff !important; font-size:24px; line-height:1.15; font-weight:900; letter-spacing:-0.4px;">
+                  Nueva solicitud de contacto
+                </h1>
+
+                <p style="margin:8px 0 0; color:#d8eafe !important; font-size:13px; line-height:1.5; font-weight:700;">
+                  Se recibió una nueva solicitud desde la página web de Consultoría Social Bi Ne Bianni.
                 </p>
-              </div>
 
-              <table style="width:100%; border-collapse:collapse;">
-                <tr>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:12px; font-weight:900; width:38%; vertical-align:top;">
-                    Nombre
-                  </td>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:13px; font-weight:800; vertical-align:top;">
-                    ${nombreHtml}
-                  </td>
-                </tr>
+              </td>
+            </tr>
 
-                <tr>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:12px; font-weight:900; vertical-align:top;">
-                    Empresa u organización
-                  </td>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:13px; font-weight:800; vertical-align:top;">
-                    ${empresaHtml}
-                  </td>
-                </tr>
+            <tr>
+              <td bgcolor="#0f2a44" style="padding:16px 18px 18px; background:#0f2a44 !important; color:#f8fafc !important;">
 
-                <tr>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:12px; font-weight:900; vertical-align:top;">
-                    Cargo
-                  </td>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:13px; font-weight:800; vertical-align:top;">
-                    ${cargoHtml}
-                  </td>
-                </tr>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#123452" style="width:100%; background:#123452 !important; border:1px solid #3c7ea3; border-radius:12px; margin-bottom:10px;">
+                  <tr>
+                    <td style="padding:9px 11px; color:#f8fafc !important;">
+                      <p style="margin:0; color:#ffffff !important; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:1.3px;">
+                        Información recibida
+                      </p>
+                    </td>
+                  </tr>
+                </table>
 
-                <tr>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:12px; font-weight:900; vertical-align:top;">
-                    Correo electrónico
-                  </td>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:13px; font-weight:800; vertical-align:top;">
-                    <a href="mailto:${correoHtml}" style="color:#075985; text-decoration:none; font-weight:900;">
-                      ${correoHtml}
-                    </a>
-                  </td>
-                </tr>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; border-collapse:collapse; color:#f8fafc !important;">
+                  
+                  <tr>
+                    <td width="38%" style="padding:8px 0; border-bottom:1px solid #2f6685; color:#b8d4e8 !important; font-size:12px; font-weight:900; vertical-align:top;">
+                      Nombre
+                    </td>
+                    <td style="padding:8px 0; border-bottom:1px solid #2f6685; color:#ffffff !important; font-size:13px; font-weight:800; vertical-align:top; word-break:break-word;">
+                      ${nombreHtml}
+                    </td>
+                  </tr>
 
-                <tr>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:12px; font-weight:900; vertical-align:top;">
-                    Teléfono
-                  </td>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:13px; font-weight:800; vertical-align:top;">
-                    +52 ${telefonoHtml}
-                  </td>
-                </tr>
+                  <tr>
+                    <td width="38%" style="padding:8px 0; border-bottom:1px solid #2f6685; color:#b8d4e8 !important; font-size:12px; font-weight:900; vertical-align:top;">
+                      Empresa u organización
+                    </td>
+                    <td style="padding:8px 0; border-bottom:1px solid #2f6685; color:#ffffff !important; font-size:13px; font-weight:800; vertical-align:top; word-break:break-word;">
+                      ${empresaHtml}
+                    </td>
+                  </tr>
 
-                <tr>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:12px; font-weight:900; vertical-align:top;">
-                    Tipo de proyecto
-                  </td>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:13px; font-weight:800; vertical-align:top;">
-                    ${tipoProyectoHtml}
-                  </td>
-                </tr>
+                  <tr>
+                    <td width="38%" style="padding:8px 0; border-bottom:1px solid #2f6685; color:#b8d4e8 !important; font-size:12px; font-weight:900; vertical-align:top;">
+                      Cargo
+                    </td>
+                    <td style="padding:8px 0; border-bottom:1px solid #2f6685; color:#ffffff !important; font-size:13px; font-weight:800; vertical-align:top; word-break:break-word;">
+                      ${cargoHtml}
+                    </td>
+                  </tr>
 
-                <tr>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#30435D; font-size:12px; font-weight:900; vertical-align:top;">
-                    Estado de la República
-                  </td>
-                  <td style="padding:7px 0; border-bottom:1px solid #d9e8f1; color:#07182A; font-size:13px; font-weight:800; vertical-align:top;">
-                    ${estadoHtml}
-                  </td>
-                </tr>
-              </table>
+                  <tr>
+                    <td width="38%" style="padding:8px 0; border-bottom:1px solid #2f6685; color:#b8d4e8 !important; font-size:12px; font-weight:900; vertical-align:top;">
+                      Correo electrónico
+                    </td>
+                    <td style="padding:8px 0; border-bottom:1px solid #2f6685; color:#ffffff !important; font-size:13px; font-weight:800; vertical-align:top; word-break:break-word;">
+                      <a href="mailto:${correoHtml}" style="color:#86cdfc !important; text-decoration:none; font-weight:900; word-break:break-word;">
+                        ${correoHtml}
+                      </a>
+                    </td>
+                  </tr>
 
-              <div style="margin-top:15px;">
-                <p style="margin:0 0 7px; color:#07182A; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:1.3px;">
-                  Mensaje del contacto
+                  <tr>
+                    <td width="38%" style="padding:8px 0; border-bottom:1px solid #2f6685; color:#b8d4e8 !important; font-size:12px; font-weight:900; vertical-align:top;">
+                      Teléfono
+                    </td>
+                    <td style="padding:8px 0; border-bottom:1px solid #2f6685; color:#ffffff !important; font-size:13px; font-weight:800; vertical-align:top;">
+                      +52 ${telefonoHtml}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="38%" style="padding:8px 0; border-bottom:1px solid #2f6685; color:#b8d4e8 !important; font-size:12px; font-weight:900; vertical-align:top;">
+                      Tipo de proyecto
+                    </td>
+                    <td style="padding:8px 0; border-bottom:1px solid #2f6685; color:#ffffff !important; font-size:13px; font-weight:800; vertical-align:top; word-break:break-word;">
+                      ${tipoProyectoHtml}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="38%" style="padding:8px 0; border-bottom:1px solid #2f6685; color:#b8d4e8 !important; font-size:12px; font-weight:900; vertical-align:top;">
+                      Estado de la República
+                    </td>
+                    <td style="padding:8px 0; border-bottom:1px solid #2f6685; color:#ffffff !important; font-size:13px; font-weight:800; vertical-align:top; word-break:break-word;">
+                      ${estadoHtml}
+                    </td>
+                  </tr>
+
+                </table>
+
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; margin-top:15px;">
+                  <tr>
+                    <td style="padding:0; color:#f8fafc !important;">
+                      <p style="margin:0 0 7px; color:#ffffff !important; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:1.3px;">
+                        Mensaje del contacto
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td bgcolor="#0b2238" style="background:#0b2238 !important; border:1px solid #3c7ea3; border-left:4px solid #86cdfc; border-radius:13px; padding:12px 13px; color:#ffffff !important;">
+                      <p style="margin:0; color:#ffffff !important; font-size:13px; line-height:1.5; font-weight:700; white-space:pre-line; word-break:break-word;">
+                        ${mensajeHtml}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#123452" style="width:100%; margin-top:14px; background:#123452 !important; border:1px solid #3c7ea3; border-radius:13px;">
+                  <tr>
+                    <td style="padding:10px 12px; color:#ffffff !important;">
+                      <p style="margin:0; color:#ffffff !important; font-size:12px; line-height:1.45; font-weight:900;">
+                        Puedes responder directamente a este correo para dar seguimiento a la solicitud.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+
+            <tr>
+              <td bgcolor="#0b2238" style="background:#0b2238 !important; padding:11px 18px; border-top:1px solid #2f6685; color:#d8eafe !important;">
+                <p style="margin:0; color:#d8eafe !important; font-size:10.5px; line-height:1.45; font-weight:700;">
+                  Este mensaje fue enviado automáticamente desde el formulario de contacto de la página web de Consultoría Social Bi Ne Bianni.
                 </p>
+              </td>
+            </tr>
 
-                <div style="background:#f8fcff; border:1px solid #9bdcf8; border-left:4px solid #0ea5e9; border-radius:13px; padding:12px 13px;">
-                  <p style="margin:0; color:#111827; font-size:13px; line-height:1.5; font-weight:700; white-space:pre-line;">
-                    ${mensajeHtml}
-                  </p>
-                </div>
-              </div>
+          </table>
 
-              <div style="margin-top:14px; background:#e9fbff; border:1px solid #7dd3fc; border-radius:13px; padding:10px 12px;">
-                <p style="margin:0; color:#07182A; font-size:12px; line-height:1.45; font-weight:900;">
-                  Puedes responder directamente a este correo para dar seguimiento a la solicitud.
-                </p>
-              </div>
-            </div>
-
-            <div style="background:#edf9ff; padding:11px 18px; border-top:1px solid #9bdcf8;">
-              <p style="margin:0; color:#24344b; font-size:10.5px; line-height:1.45; font-weight:700;">
-                Este mensaje fue enviado automáticamente desde el formulario de contacto de la página web de Consultoría Social Bi Ne Bianni.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
     `;
 
     const text = `

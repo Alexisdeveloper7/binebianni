@@ -19,7 +19,7 @@ const estadoInicial = {
 };
 
 const inputClass =
-  "rounded-lg border border-cyan-300/35 bg-white/95 px-2 py-[4px] text-[16px] leading-[1.15] font-semibold text-slate-900 shadow-[0_4px_12px_rgba(8,47,73,0.13)] outline-none transition-all duration-300 hover:border-sky-300 hover:bg-white hover:shadow-[0_6px_16px_rgba(14,165,233,0.18)] focus:border-sky-300 focus:bg-white focus:ring-2 focus:ring-sky-300/55 md:rounded-xl md:px-3 md:py-[6px] md:text-sm max-[380px]:px-1.5 max-[380px]:py-[3px] max-[380px]:text-[16px]";
+  "rounded-lg border-2 border-cyan-200/70 bg-white/95 px-2 py-[4px] text-[16px] leading-[1.15] font-semibold text-slate-900 shadow-[0_4px_12px_rgba(8,47,73,0.13)] outline-none transition-all duration-300 hover:border-cyan-200 hover:bg-white hover:shadow-[0_6px_16px_rgba(14,165,233,0.18)] focus:border-cyan-200 focus:bg-white focus:ring-2 focus:ring-sky-300/45 md:rounded-xl md:px-3 md:py-[6px] md:text-sm max-[380px]:px-1.5 max-[380px]:py-[3px] max-[380px]:text-[16px]";
 
 const labelClass =
   "pl-0.5 text-[7px] font-black uppercase tracking-[0.07em] text-cyan-100 drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)] md:text-[8.5px] md:tracking-[0.09em] max-[380px]:text-[6.8px]";
@@ -162,7 +162,7 @@ export default function Contacto() {
 
           <form
             onSubmit={abrirConfirmacion}
-            className="relative z-10 mx-auto grid w-full max-w-[430px] gap-[2px] rounded-[0.7rem] border border-transparent bg-transparent p-1 text-left shadow-none backdrop-blur-0 sm:max-w-none sm:gap-1 sm:p-1.5 md:rounded-[1rem] lg:border-white/10 lg:bg-[#0F2A44]/35 lg:shadow-inner lg:shadow-white/10 lg:backdrop-blur-md max-[380px]:gap-[2px] max-[380px]:p-1"
+            className="relative z-10 mx-auto grid w-full max-w-[430px] gap-[2px] rounded-[0.7rem] border border-white/20 bg-[#0F2A44]/25 p-1 text-left shadow-inner shadow-white/10 backdrop-blur-0 sm:max-w-none sm:gap-1 sm:p-1.5 md:rounded-[1rem] lg:bg-[#0F2A44]/35 lg:backdrop-blur-md max-[380px]:gap-[2px] max-[380px]:p-1"
           >
             <div className="grid gap-[1px]">
               <label htmlFor="nombre" className={labelClass}>
@@ -243,8 +243,8 @@ export default function Contacto() {
                 Teléfono
               </label>
 
-              <div className="flex overflow-hidden rounded-lg border border-cyan-300/35 bg-white/95 shadow-[0_4px_12px_rgba(8,47,73,0.13)] transition-all duration-300 hover:border-sky-300 hover:bg-white hover:shadow-[0_6px_16px_rgba(14,165,233,0.18)] focus-within:border-sky-300 focus-within:bg-white focus-within:ring-2 focus-within:ring-sky-300/55 md:rounded-xl">
-                <span className="flex items-center border-r border-cyan-300/25 bg-[#dff4ff] px-2 text-[12px] font-black text-[#0F2A44] md:px-3 md:text-sm max-[380px]:px-1.5 max-[380px]:text-[11.5px]">
+              <div className="flex overflow-hidden rounded-lg border-2 border-cyan-200/70 bg-white/95 shadow-[0_4px_12px_rgba(8,47,73,0.13)] transition-all duration-300 hover:border-cyan-200 hover:bg-white hover:shadow-[0_6px_16px_rgba(14,165,233,0.18)] focus-within:border-cyan-200 focus-within:bg-white focus-within:ring-2 focus-within:ring-sky-300/45 md:rounded-xl">
+                <span className="flex items-center border-r border-cyan-200/70 bg-[#dff4ff] px-2 text-[12px] font-black text-[#0F2A44] md:px-3 md:text-sm max-[380px]:px-1.5 max-[380px]:text-[11.5px]">
                   +52
                 </span>
 

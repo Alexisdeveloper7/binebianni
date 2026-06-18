@@ -5,14 +5,35 @@ import { useEffect, useState } from "react";
 function bloquearScroll() {
   if (typeof window === "undefined") return () => {};
 
+  const scrollY = window.scrollY;
+  const scrollX = window.scrollX;
+  const anchoScrollbar =
+    window.innerWidth - document.documentElement.clientWidth;
+
   window.__modalScrollLockCount = (window.__modalScrollLockCount || 0) + 1;
 
   if (window.__modalScrollLockCount === 1) {
-    window.__modalOriginalBodyOverflow = document.body.style.overflow;
-    window.__modalOriginalHtmlOverflow = document.documentElement.style.overflow;
+    window.__modalOriginalBodyPosition = document.body.style.position;
+    window.__modalOriginalBodyTop = document.body.style.top;
+    window.__modalOriginalBodyLeft = document.body.style.left;
+    window.__modalOriginalBodyRight = document.body.style.right;
+    window.__modalOriginalBodyWidth = document.body.style.width;
+    window.__modalOriginalBodyPaddingRight = document.body.style.paddingRight;
+    window.__modalOriginalHtmlScrollBehavior =
+      document.documentElement.style.scrollBehavior;
 
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = `-${scrollX}px`;
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+
+    if (anchoScrollbar > 0) {
+      document.body.style.paddingRight = `${anchoScrollbar}px`;
+    }
+
+    window.__modalScrollY = scrollY;
+    window.__modalScrollX = scrollX;
   }
 
   return () => {
@@ -22,12 +43,39 @@ function bloquearScroll() {
     );
 
     if (window.__modalScrollLockCount === 0) {
-      document.body.style.overflow = window.__modalOriginalBodyOverflow || "";
-      document.documentElement.style.overflow =
-        window.__modalOriginalHtmlOverflow || "";
+      const scrollYGuardado = window.__modalScrollY || 0;
+      const scrollXGuardado = window.__modalScrollX || 0;
 
-      delete window.__modalOriginalBodyOverflow;
-      delete window.__modalOriginalHtmlOverflow;
+      document.documentElement.style.scrollBehavior = "auto";
+
+      document.body.style.position = window.__modalOriginalBodyPosition || "";
+      document.body.style.top = window.__modalOriginalBodyTop || "";
+      document.body.style.left = window.__modalOriginalBodyLeft || "";
+      document.body.style.right = window.__modalOriginalBodyRight || "";
+      document.body.style.width = window.__modalOriginalBodyWidth || "";
+      document.body.style.paddingRight =
+        window.__modalOriginalBodyPaddingRight || "";
+
+      window.scrollTo({
+        left: scrollXGuardado,
+        top: scrollYGuardado,
+        behavior: "auto",
+      });
+
+      requestAnimationFrame(() => {
+        document.documentElement.style.scrollBehavior =
+          window.__modalOriginalHtmlScrollBehavior || "";
+
+        delete window.__modalOriginalBodyPosition;
+        delete window.__modalOriginalBodyTop;
+        delete window.__modalOriginalBodyLeft;
+        delete window.__modalOriginalBodyRight;
+        delete window.__modalOriginalBodyWidth;
+        delete window.__modalOriginalBodyPaddingRight;
+        delete window.__modalOriginalHtmlScrollBehavior;
+        delete window.__modalScrollY;
+        delete window.__modalScrollX;
+      });
     }
   };
 }
@@ -70,8 +118,10 @@ export default function ModalCorreoEnviado({ abierto, onCerrar }) {
 
   return (
     <div
-      className={`fixed inset-0 z-[999] flex items-center justify-center px-4 backdrop-blur-sm transition-all duration-300 ease-out ${
-        visible ? "bg-black/50 opacity-100" : "bg-black/0 opacity-0"
+      role="dialog"
+      aria-modal="true"
+      className={`fixed inset-0 z-[999] flex items-center justify-center px-4 transition-all duration-300 ease-out ${
+        visible ? "bg-black/60 opacity-100" : "bg-black/0 opacity-0"
       }`}
     >
       <div
