@@ -41,23 +41,27 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b-2 border-[#30435D]/45 bg-white shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
       <div className="relative mx-auto flex min-h-[74px] max-w-7xl items-center justify-between gap-3 px-4 md:px-6 xl:px-8">
         <button
-          type="button"
-          aria-label="Ir al inicio"
-          onClick={() => irASeccion("inicio", "logo-inicio")}
-          className={`group flex min-w-0 shrink-0 touch-manipulation cursor-pointer items-center rounded-2xl outline-none transition-[background-color,box-shadow,ring-color] duration-300 lg:hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 ${
-            botonPresionado === "logo-inicio"
-              ? "bg-[#eef8ff] ring-2 ring-[#86CDFC]/60 ring-offset-2 ring-offset-white shadow-md shadow-[#86CDFC]/20"
-              : ""
-          }`}
-        >
-          <img
-            src="/images/logo.png"
-            alt="Bi Ne Bianni"
-            className={`h-10 w-auto max-w-[145px] object-contain transition-opacity duration-300 group-hover:opacity-90 sm:h-11 sm:max-w-[175px] md:max-w-[125px] lg:max-w-[150px] xl:h-12 xl:max-w-[205px] ${
-              botonPresionado === "logo-inicio" ? "opacity-90" : ""
-            }`}
-          />
-        </button>
+  type="button"
+  aria-label="Ir al inicio"
+  onClick={() => irASeccion("inicio", "logo-inicio")}
+  className={`group relative flex min-w-0 shrink-0 touch-manipulation cursor-pointer items-center rounded-2xl px-1.5 py-1 outline-none transition-[background-color,box-shadow,ring-color,opacity] duration-300 hover:bg-[#eaf7ff] hover:shadow-[0_8px_22px_rgba(48,67,93,0.13)] active:scale-[0.995] focus-visible:ring-2 focus-visible:ring-[#86CDFC] focus-visible:ring-offset-2 ${
+    botonPresionado === "logo-inicio"
+      ? "bg-[#eef8ff] ring-2 ring-[#86CDFC]/60 ring-offset-2 ring-offset-white shadow-md shadow-[#86CDFC]/20"
+      : ""
+  }`}
+>
+  <span className="pointer-events-none absolute bottom-[3px] left-1/2 h-[3px] w-0 -translate-x-1/2 overflow-hidden rounded-full bg-gradient-to-r from-transparent via-[#86CDFC] to-transparent opacity-0 shadow-[0_0_12px_rgba(134,205,252,0.75)] transition-all duration-300 group-hover:w-[88%] group-hover:opacity-100" />
+
+  <span className="pointer-events-none absolute bottom-[2px] left-1/2 h-[1px] w-0 -translate-x-1/2 rounded-full bg-[#30435D]/30 opacity-0 transition-all duration-300 group-hover:w-[72%] group-hover:opacity-100" />
+
+  <img
+    src="/images/logo.png"
+    alt="Bi Ne Bianni"
+    className={`relative z-10 h-10 w-auto max-w-[145px] object-contain transition-[opacity,filter] duration-300 group-hover:opacity-95 group-hover:drop-shadow-[0_4px_8px_rgba(48,67,93,0.18)] sm:h-11 sm:max-w-[175px] md:max-w-[125px] lg:max-w-[150px] xl:h-12 xl:max-w-[205px] ${
+      botonPresionado === "logo-inicio" ? "opacity-90" : ""
+    }`}
+  />
+</button>
 
         <nav className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center justify-center lg:flex">
           <div className="pointer-events-auto flex max-w-full items-center gap-1 rounded-full border border-slate-200 bg-[#f6f9fc] p-1 shadow-inner shadow-white">

@@ -2,7 +2,7 @@ export default function Nosotros() {
   return (
     <section
       id="nosotros"
-      className="relative -mt-px -mb-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 py-2 md:scroll-mt-24 md:px-8 md:py-4"
+      className="relative -mt-px -mb-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 py-1 md:scroll-mt-24 md:px-8 md:py-"
     >
       <div className="pointer-events-none absolute -left-32 top-10 h-64 w-64 rounded-full bg-[#86CDFC]/20 blur-3xl" />
       <div className="pointer-events-none absolute -right-32 bottom-6 h-72 w-72 rounded-full bg-white/35 blur-3xl" />

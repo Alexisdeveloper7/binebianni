@@ -32,7 +32,7 @@ export default function Experiencia() {
   return (
     <section
       id="experiencia"
-      className="relative -mt-px -mb-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 pt-4 pb-2 md:scroll-mt-24 md:px-8 md:pt-5 md:pb-6 lg:pt-6 lg:pb-10"
+      className="relative -mt-px -mb-px scroll-mt-20 overflow-hidden bg-[#e4f5ff] px-4 pt-4 pb-3 md:scroll-mt-24 md:px-8 md:pt-5 md:pb- lg:pt-6 lg:pb-"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="mb-5 text-center md:mb-7">
