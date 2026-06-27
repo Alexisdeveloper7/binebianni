@@ -7,13 +7,13 @@ export default function ConsultoriaEspecializada() {
   ];
 
   return (
-    <section className="relative -mt-px -mb-px overflow-hidden bg-[#e4f5ff] px-4 py-2 md:px-8 md:py-4 lg:py-6">
+    <section className="relative -mt-px -mb-px overflow-hidden bg-[#e4f5ff] px-4 pt-0 pb-2 md:px-8 md:pt-0 md:pb-4 lg:pt-0 lg:pb-6">
       <div className="relative z-10 mx-auto max-w-full sm:max-w-lg md:max-w-[36rem] lg:max-w-2xl">
         <div className="relative touch-manipulation overflow-hidden rounded-[1.45rem] bg-gradient-to-br from-[#1f2d40] via-[#30435D] to-[#182536] text-white transition-all duration-300 hover:-translate-y-1 active:scale-[0.99] lg:rounded-[1.75rem]">
           <img
             src="/images/1.png"
             alt="Paisaje de energía renovable con sol, viento y sostenibilidad"
-            className="block h-auto w-full lg:hidden"
+            className="block h-auto w-full"
           />
 
           <div className="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#86CDFC]/25 blur-2xl lg:h-44 lg:w-44" />
